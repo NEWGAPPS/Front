@@ -28,26 +28,28 @@ const Container = styled.div`
   );
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  .show{
+  .show {
     position: absolute;
-    top: 80px;
+    bottom: 29px;
     left: 36px;
   }
 
-  .show h1{
+  .show h1 {
+    font-family: "Montserrat", sans-serif;
     font-size: 26px;
-    font-weight: 500;
+    font-weight: Bold;
   }
 
-  .show p{
+  .show p {
     margin-top: 11px;
     font-size: 13px;
+    font-weight: 400;
   }
   img {
-    width: 26vw;
+    width: 100px;
     position: absolute;
     top: 18px;
-    left: 189px;
+    right: 21px;
   }
 `;
 

@@ -14,12 +14,12 @@ function First() {
           </p>
         </div>
       </Container>
-      <CardContainer/>
+      <CardContainer />
     </>
   );
 }
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 73vw;
   margin: 31px auto 0;
   h1.guide {
