@@ -3,13 +3,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import First from "./pages/First";
 import Second from "./pages/Second";
 import Third from "./pages/Third";
-import { GlobalStyles } from "./styled";
+import GlobalStyles from "./styled";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Nav></Nav>
+      <Nav />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<First />}></Route>
