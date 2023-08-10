@@ -2,54 +2,74 @@ import React from "react";
 import { styled } from "styled-components";
 function Card() {
   return (
-    <>
-      <Container>
-        <div className="show">
-          <h1 className="station_number">2호선</h1>
-          <p className="neighbor">문래역, 영등포구청, 당산역</p>
-        </div>
-        <img src="/images/호선/2호선.png" alt="2호선" className="2호선" />
-      </Container>
-    </>
+    <Container>
+      <div className="title">
+        <img src="images/호선/2호선.png" alt="2호선" className="train-number" />
+        <span className="number">2호선</span>
+      </div>
+      <div className="direction_container">
+        <Direction>
+          <div className="inner">
+            <div className="direction_type">내선순환</div>
+          </div>
+        </Direction>
+        <Direction>
+          <div className="inner">
+            <p className="direction_type">내선순환</p>
+          </div>
+        </Direction>
+      </div>
+    </Container>
   );
 }
-
 const Container = styled.div`
-  margin: 17px auto;
-  background-color: green;
-  border-radius: 30px;
-  width: 80vw;
-  height: 19vh;
-  position: relative;
+  width: 82vw;
+  margin: 17px auto 0;
+  .title {
+    font-size: 26px;
+    display: flex;
+  }
+  .title img {
+    margin-left: 5px;
+    width: 24px;
+    display: block;
+    height: 24px;
+    align-self: flex-end;
+  }
+  .title span {
+    display: block;
+    margin-left: 6px;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: Montserrat;
+  }
+  .direction_container {
+    width: 84vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+`;
+
+const Direction = styled.div`
   background: linear-gradient(
     180deg,
-    rgba(86, 188, 50, 0.65) 0%,
-    rgba(86, 188, 50, 0.1885) 100%
+    rgba(86, 188, 50, 0.8) 0%,
+    rgba(86, 188, 50, 0.496) 100%
   );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  .show {
-    position: absolute;
-    bottom: 29px;
-    left: 36px;
+  border-radius: 20px;
+  width: 40vw;
+  box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 138px;
+  .inner {
+    margin: 0 auto;
+    width: 35vw;
+    margin-top: 52px;
   }
-
-  .show h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 26px;
-    font-weight: Bold;
-  }
-
-  .show p {
-    margin-top: 11px;
-    font-size: 13px;
-    font-weight: 400;
-  }
-  img {
-    width: 100px;
-    position: absolute;
-    top: 18px;
-    right: 21px;
+  .direction_type {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
   }
 `;
 

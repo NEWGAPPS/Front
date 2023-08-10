@@ -4,16 +4,14 @@ import { styled } from "styled-components";
 
 function CardContainer() {
   return (
-    <>
       <Container>
         <Card />
       </Container>
-    </>
   );
 }
 
 const Container = styled.div`
-  margin: 0 auto;
+  margin: 0 20px;
 `;
 
 export default CardContainer;

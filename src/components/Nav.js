@@ -10,12 +10,17 @@ function Nav() {
         </li>
 
         <li className="map">
-          <img
-            src="images/subway-white.png"
-            alt="지하철 노선도 아이콘"
-            className="icon"
-          />
-          노선도 확인
+          <a
+            href="http://www.seoulmetro.co.kr/kr/cyberStation.do"
+            target="_blank"
+          >
+            <img
+              src="images/subway-white.png"
+              alt="지하철 노선도 아이콘"
+              className="icon"
+            />
+            노선도 확인
+          </a>
         </li>
       </ul>
     </NavContainer>
