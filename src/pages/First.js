@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import CardList from "../components/CardList";
+import CardList from "../components/first/CardList";
 
 function First({ getTime }) {
   return (
