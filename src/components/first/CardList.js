@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 function CardList() {
   //  배열 받아와서 반복 횟수만큼 Card 컴포넌트 생성
