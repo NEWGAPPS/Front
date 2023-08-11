@@ -17,10 +17,23 @@ const GlobalStyles = createGlobalStyle`
     --7호선: #747F00;
     --8호선: #E6186C;
     --9호선: #ECB906;
-
   }
+
   a{
     text-decoration: none;
+    color: white;
+  }
+
+  button{
+    background-color: #FFFFFF;
+    color: #8D8F9F;
+    border: 1px solid #B9B9B9;
+    font-weight: Bold;
+    height: 38px;
+  }
+  
+  button.refresh{
+    background-color: #634CEB;
     color: white;
   }
 
