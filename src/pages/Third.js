@@ -1,9 +1,7 @@
-import React from 'react'
+import Station from "../components/third/Station";
 
 function Third() {
-  return (
-    <div>Third</div>
-  )
+  return <Station />;
 }
 
-export default Third
+export default Third;
