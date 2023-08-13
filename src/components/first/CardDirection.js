@@ -4,20 +4,28 @@ import styled from "styled-components";
 function CardDirection() {
   return (
     <DirectionContainer>
-      <div className="inner">
-        <p className="direction_type">내선순환</p>
-        <div className="neighbors">
-          <ul className="upper-station">
-            <li>당산역</li>
-            <li>문래역</li>
-          </ul>
-          <img src="images/subway-line.png" alt="지하철 호선의 모습" />
-          <ul className="lower-station">
-            <li>합정역</li>
-            <li>영등포구청</li>
-            <li>신도림역</li>
-          </ul>
-          <img className="arrow" src="images/arrow.png" alt="화살표" />
+      <div className="container">
+        <div className="upper-subway">
+          <img src="/images/지하철-오른쪽방향.png" alt="오른쪽 지하철" />
+        </div>
+        <div className="station_list">
+          <div className="line">
+            <div className="circle">
+              <li>신길</li>
+            </div>
+            <div className="circle">
+              <li>영등포시장</li>
+            </div>
+            <div className="circle">
+              <li>영등포구청</li>
+            </div>
+            <div className="circle">
+              <li>양평</li>
+            </div>
+          </div>
+        </div>
+        <div className="lower-subway">
+          <img src="/images/지하철-왼쪽방향.png" alt="왼쪽 지하철" />
         </div>
       </div>
     </DirectionContainer>
@@ -25,68 +33,67 @@ function CardDirection() {
 }
 
 const DirectionContainer = styled.div`
-  background: linear-gradient(
-    180deg,
-    rgba(86, 188, 50, 0.8) 0%,
-    rgba(86, 188, 50, 0.496) 100%
-  );
-  border-radius: 20px;
-  width: 40vw;
-  box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 138px;
-  .inner {
+  background-color: #160c23;
+  border-radius: 15px;
+  width: 100%;
+  height: 150px;
+  .container {
     margin: 0 auto;
-    width: 35vw;
-    margin-top: 52px;
   }
-  .direction_type {
-    margin-left: 10px;
-    font-size: 20px;
-    font-weight: 500;
-  }
-  .neighbors {
+  .upper-subway {
     display: flex;
-    flex-direction: column;
+    position: relative;
+    width: 86%;
+    margin: 20px auto 10px;
+    height: 28px;
   }
-  .neighbors ul {
-    display: flex;
-  }
-  .neighbors ul li {
-    font-size: 7px;
-    zoom: 0.85;
-    font-weight: 300;
-  }
-  .neighbors ul.upper-station {
-    width: 78%;
-    align-self: center;
-    margin-top: 14px;
-    justify-content: space-evenly;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .upper-subway img {
+    width: 58px;
+    position: absolute;
+    top: 0;
+    left: 150px;
   }
 
-  .neighbors ul.upper-station li {
-    text-align: center;
+  .lower-subway {
+    width: 86%;
+    display: flex;
+    margin: 30px auto 0;
+  }
+  .lower-subway img {
+    width: 58px;
   }
 
-  .neighbors ul.lower-station {
-    width: 95%;
-    align-self: center;
+  .station_list {
+    margin: 0 auto;
+    width: 87%;
+    height: 2px;
+  }
+
+  .station_list .line {
+    width: 96%;
+    height: 2px;
+    background-color: var(--5호선);
+    display: flex;
     justify-content: space-between;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
   }
-  .neighbors ul.lower-station li {
+
+  .station_list .line .circle {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border-radius: 7px;
+    border: 2px solid var(--5호선);
+    position: relative;
+  }
+  .station_list .line .circle li {
+    position: absolute;
+    width: 60px;
+    font-size: 10px;
     text-align: center;
-  }
-  .neighbors img {
-    width: 90%;
-    display: block;
-    align-self: center;
-    margin: 3px 0;
-  }
-  .neighbors img.arrow {
-    width: 20px;
+    height: 20px;
+    top: 12px;
+    left: -30px;
   }
 `;
 

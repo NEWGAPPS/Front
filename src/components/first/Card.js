@@ -5,11 +5,10 @@ function Card() {
   return (
     <CardContainer>
       <div className="title">
-        <img src="images/호선/2호선.png" alt="2호선" className="train-number" />
-        <span className="number">2호선</span>
+        <img src="images/호선/5호선.png" alt="5호선" className="train-number" />
+        <span className="number">5호선</span>
       </div>
       <div className="direction_container">
-        <CardDirection />
         <CardDirection />
       </div>
     </CardContainer>

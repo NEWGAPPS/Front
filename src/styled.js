@@ -17,6 +17,9 @@ const GlobalStyles = createGlobalStyle`
     --7호선: #747F00;
     --8호선: #E6186C;
     --9호선: #ECB906;
+    word-break: keep-all;
+    list-style-type: none;
+
   }
 
   a{

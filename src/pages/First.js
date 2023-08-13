@@ -7,7 +7,7 @@ function First({ getTime }) {
     <>
       <GuideMessage>
         <div className="inner">
-          <h1 className="guide">탑승한(할) 호선을 선택해주세요.</h1>
+          <h1 className="guide">탑승한(할) 지하철을 클릭해주세요!</h1>
           <p className="time">
             <img src="images/clock.png" alt="시계 아이콘" className="clock" />
             <span className="real_time">{getTime()}</span>
@@ -20,8 +20,8 @@ function First({ getTime }) {
 }
 
 export const GuideMessage = styled.div`
-  width: 73vw;
-  margin: 31px auto 0;
+  width: 80vw;
+  margin: 31px auto 6px;
   h1.guide {
     font-size: 16px;
     font-weight: 500;
