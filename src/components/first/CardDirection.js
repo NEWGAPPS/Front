@@ -9,6 +9,7 @@ function CardDirection() {
           <img src="/images/지하철-오른쪽방향.png" alt="오른쪽 지하철" />
         </div>
         <div className="station_list">
+          {/* 호선마다 색깔 달라져야되고, 역명도 props으로 전달되서 있어야함 */}
           <div className="line">
             <div className="circle">
               <li>신길</li>

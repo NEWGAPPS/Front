@@ -16,6 +16,8 @@ function CardList() {
 
 const CardListContainer = styled.div`
   margin: 0 20px;
+  height: 600px;
+  overflow-y: scroll;
 `;
 
 export default CardList;
