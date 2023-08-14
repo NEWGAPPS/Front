@@ -15,7 +15,7 @@ function CardList() {
         {
           id: 3028,
           way: "right",
-          type: "일반",
+          type: "급행",
           state: "진행중",
           before: "영등포구청", 
           after: "양평",
@@ -53,6 +53,29 @@ function CardList() {
         },
       ],
     },
+    {
+      id: "0",
+      stationNum: "7",
+      stationList: ["신길", "영등포시장", "영등포구청", "양평"],
+      subwayList: [
+        {
+          id: 3028,
+          way: "right",
+          type: "일반",
+          state: "진행중",
+          before: "영등포구청", 
+          after: "양평",
+        },
+        {
+          id: 1023,
+          way: "left",
+          type: "일반",
+          state: "정차",
+          before: "신길",
+          after: "",
+        },
+      ],
+    },
   ];
   return (
     <CardListContainer>
@@ -65,7 +88,7 @@ function CardList() {
 
 const CardListContainer = styled.div`
   margin: 0 20px;
-  height: 600px;
+  height: 73vh;
   overflow-y: scroll;
 `;
 

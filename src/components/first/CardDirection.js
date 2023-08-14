@@ -202,9 +202,15 @@ const DirectionContainer = styled.div`
   }
   .upper-subway img {
     width: 58px;
+    height: 28px;
     position: absolute;
     top: 0;
     left: 0;
+    transition: 0.4s;
+  }
+
+  img:hover {
+    transform: scale(1.2) translateX(3px);
   }
 
   .lower-subway {
@@ -219,6 +225,7 @@ const DirectionContainer = styled.div`
     position: absolute;
     top: 0;
     right: 0;
+    transition: 0.4s;
   }
 
   .station_list {

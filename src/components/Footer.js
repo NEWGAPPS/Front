@@ -34,7 +34,7 @@ const FooterTitle = styled.div`
 
 const FooterContent = styled.div`
   height: 39px;
-  margin: 0px 40px 10px 40px;
+  margin: 0px 40px 1px 40px;
   font-size: 9px;
   font-style: normal;
   font-weight: 300;
