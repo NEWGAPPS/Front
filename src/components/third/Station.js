@@ -1,40 +1,48 @@
+import React from "react";
 import styled from "styled-components";
 
-const Station = () => {
+const Station = (props) => {
   return (
-    <StationContainer>
-      <ScrollContainer>
-        <TitleContainer>
-          <StationTitle>이전역</StationTitle>
-          <StationTitle>다음역</StationTitle>
-          <StationTitle>다다음역</StationTitle>
-          <StationTitle>다다다음역</StationTitle>
-        </TitleContainer>
-        <BodyContainer>
-          <NameContainer>
-            <StationInfo>
-              <StationName>영등포구청</StationName>
+    <ScrollContainer>
+      <TitleContainer>
+        <StationTitle>이전역</StationTitle>
+        <StationTitle>다음역</StationTitle>
+        <StationTitle>다다음역</StationTitle>
+        <StationTitle>다다다음역</StationTitle>
+      </TitleContainer>
+      <BodyContainer>
+        <NameContainer>
+          {props.data.map((station, index) => (
+            <StationInfo key={index}>
+              <StationNameKR>{station.stationNameKR}</StationNameKR>
+              <StationNameEN>{station.stationNameEN}</StationNameEN>
+              <StationExitInfo>
+                {station.exitLineList.map((line, index) => (
+                  <img
+                    key={index}
+                    className="exitLine"
+                    src={`images/호선/${line}호선.png`}
+                    alt="호선"
+                  />
+                ))}
+                <img
+                  className="door"
+                  src={
+                    station.exitDoor === "right"
+                      ? "images/door-right.png"
+                      : "images/door-left.png"
+                  }
+                  alt="문 방향"
+                />
+              </StationExitInfo>
             </StationInfo>
-            <StationInfo>
-              <StationName>영등포시장</StationName>
-            </StationInfo>
-            <StationInfo>
-              <StationName>영등포구청</StationName>
-            </StationInfo>
-            <StationInfo>
-              <StationName>영등포구청</StationName>
-            </StationInfo>
-          </NameContainer>
-          <Line />
-        </BodyContainer>
-      </ScrollContainer>
-    </StationContainer>
+          ))}
+        </NameContainer>
+        <Line />
+      </BodyContainer>
+    </ScrollContainer>
   );
 };
-
-const StationContainer = styled.div`
-  height: 677px;
-`;
 
 const ScrollContainer = styled.div`
   overflow-x: scroll;
@@ -64,7 +72,7 @@ const BodyContainer = styled.div`
 
 const Line = styled.div`
   position: absolute;
-  z-index: -1; /* 다른 컴포넌트 뒤로 숨기기 위해 음수 값을 사용 */
+  z-index: -1;
   height: 100px;
   border-top: 5px solid #975ce2;
   border-bottom: 5px solid #975ce2;
@@ -87,16 +95,40 @@ const StationInfo = styled.div`
   border-radius: 50%;
   border: 10px solid var(--5호선);
   background: #fff;
-  color: black;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
-const StationName = styled.div``;
+const StationNameKR = styled.div`
+  padding-top: 24px;
+  color: black;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;`;
+
+const StationNameEN = styled.div`
+  margin: 9px;
+  color: #8E8A8A;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+`;
+
+const StationExitInfo = styled.div`
+  .door {
+      height: 20px;
+      margin: 0px 5px;
+    }
+  .exitLine {
+    height: 20px;
+    margin: 0px 5px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default Station;
