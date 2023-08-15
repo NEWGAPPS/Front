@@ -25,6 +25,7 @@ export const GuideMessage = styled.div`
   h1.guide {
     font-size: 16px;
     font-weight: 500;
+    margin-bottom: 10px;
   }
   p.time {
     margin-top: 11px;

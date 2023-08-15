@@ -2,20 +2,6 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 function CardDirection({ stationNum, stationList, subwayList }) {
-  const createStars = () => {
-    const starContainer = document.querySelector(".star-container");
-    const numStars = 30; // 원하는 별의 개수
-
-    for (let i = 0; i < numStars; i++) {
-      const star = document.createElement("div");
-      star.className = "star";
-      star.style.left = Math.random() * 100 + "%"; // 가로 위치
-      star.style.top = Math.random() * 100 + "%"; // 세로 위치
-      starContainer.appendChild(star);
-    }
-
-    console.log("호출!");
-  };
   const rightMovingList = [5, 37, 69];
   const leftMovingList = [10, 38, 72];
   const rightStaticList = [-5, 20, 53, 78];
@@ -33,7 +19,7 @@ function CardDirection({ stationNum, stationList, subwayList }) {
   const leftStaticDirectionList = subwayList.filter(
     (subway) => subway.way === "left" && subway.state === "정차"
   );
-
+    
   return (
     <DirectionContainer>
       <div className="star-container"></div>{" "}
@@ -254,4 +240,4 @@ const DirectionContainer = styled.div`
   }
 `;
 
-export default CardDirection;
+export default React.memo(CardDirection);

@@ -47,4 +47,4 @@ const CardContainer = styled.div`
   }
 `;
 
-export default Card;
+export default React.memo(Card);
