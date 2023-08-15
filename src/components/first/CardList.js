@@ -8,28 +8,29 @@ function CardList() {
   // 예를 들어서
   const dummyList = [
     {
-      id: "0",
-      stationNum: "5",
-      stationList: ["신길", "영등포시장", "영등포구청", "양평"],
+      id: "1",
+      stationNum: "9",
+      stationList: ["문래역", "영등포구청", "당산", "합정"],
       subwayList: [
         {
-          id: 3028,
+          id: 100,
           way: "right",
-          type: "급행",
+          type: "일반",
           state: "진행중",
-          before: "영등포구청", 
-          after: "양평",
+          before: "당산",
+          after: "합정",
         },
         {
-          id: 1023,
+          id: 200,
           way: "left",
           type: "일반",
-          state: "정차",
-          before: "신길",
-          after: "",
+          state: "진행중",
+          before: "합정",
+          after: "당산",
         },
       ],
     },
+
     {
       id: "1",
       stationNum: "2",
@@ -63,7 +64,7 @@ function CardList() {
           way: "right",
           type: "일반",
           state: "진행중",
-          before: "영등포구청", 
+          before: "영등포구청",
           after: "양평",
         },
         {
@@ -87,7 +88,10 @@ function CardList() {
 }
 
 const CardListContainer = styled.div`
-  margin: 0 20px;
+  margin: 10px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-itmes: center;
   height: 73vh;
   overflow-y: scroll;
 `;

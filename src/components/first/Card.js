@@ -20,7 +20,7 @@ function Card(prop) {
 }
 const CardContainer = styled.div`
   width: 88vw;
-  margin: 17px auto 30px;
+  margin: 17px auto 0px;
   .title {
     font-size: 26px;
     display: flex;

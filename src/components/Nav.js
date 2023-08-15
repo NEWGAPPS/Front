@@ -54,7 +54,6 @@ const NavContainer = styled.div`
     margin-top: 10px;
     font-size: 13px;
     padding-bottom: 3px;
-    border-bottom: 1px solid white;
   }
   .inner .map .icon {
     height: 11px;

@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 function CardDirection({ stationNum, stationList, subwayList }) {
+  const createStars = () => {
+    const starContainer = document.querySelector(".star-container");
+    const numStars = 30; // 원하는 별의 개수
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "%"; // 가로 위치
+      star.style.top = Math.random() * 100 + "%"; // 세로 위치
+      starContainer.appendChild(star);
+    }
+
+    console.log("호출!");
+  };
   const rightMovingList = [5, 37, 69];
   const leftMovingList = [10, 38, 72];
   const rightStaticList = [-5, 20, 53, 78];
@@ -20,43 +34,10 @@ function CardDirection({ stationNum, stationList, subwayList }) {
     (subway) => subway.way === "left" && subway.state === "정차"
   );
 
-  // const dummyList = [
-  //   {
-  //     id: "0",
-  //     stationNum: "5",
-  //     stationList: ["신길역", "영등포시장", "영등포구청", "앙평역"],
-  //     subwayList: [
-  //       {
-  //         id: 3028,
-  //         way: "right",
-  //         type: "일반",
-  //         state: "진행중",
-  //         before: "신길",
-  //         after: "영등포시장",
-  //       },
-  //       {
-  //         id: 1023,
-  //         way: "left",
-  //         type: "일반",
-  //         state: "정차",
-  //         before: "양평",
-  //         after: "영등포구청",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     id: "1",
-  //     stationNum: "2",
-  //     stationList: ["문래역", "영등포구청", "당산", "합정"],
-  //     subwayList: [
-  //       { id: 100, way: "right", type: "일반", state: "진행중",before: "합정", after: "당산" },
-  //       { id: 200, way: "left", type: "일반", state: "정차",before: "영등포구청", after: "당산" },
-  //     ],
-  //   },
-  // ];
-
   return (
     <DirectionContainer>
+      <div className="star-container"></div>{" "}
+      {/* 작은 점들로 구성된 별을 담을 컨테이너 */}
       <div className="container">
         <div className="upper-subway">
           {rightDirectionList.map((subway, index) => (
@@ -189,6 +170,16 @@ const DirectionContainer = styled.div`
   background-color: #160c23;
   border-radius: 15px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  .star {
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+  }
+
   height: 135px;
   .container {
     margin: 0 auto;

@@ -4,19 +4,28 @@ import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
-    <>
+    <Foooter>
       <FooterConatiner>
         <FontAwesomeIcon icon={faCircleQuestion} size="xs" />
         <FooterTitle>탑승 중인 지하철 운행 정보를 알아내는 방식</FooterTitle>
       </FooterConatiner>
       <FooterContent>
-        사용자의 위치와 가장 가까운 역들의 실시간 지하철 운행 정보를 API를 통해
-        사용자가 탑승한 지하철의 운행 정보를 알아냅니다.
+        사용자의 위치와 가장 가까운 역들의 실시간 지하철 운행 정보를 조회하고,
+        탑승한 지하철을 선택하면 해당 지하철 ID의 실시간 운행 정보를 제시합니다.
       </FooterContent>
       <FooterCopyRight>© 2023 NEWGAPPS. All Rights Reserved.</FooterCopyRight>
-    </>
+    </Foooter>
   );
 };
+
+const Foooter = styled.div`
+  position: fixed;
+  bottom: 0px;
+
+  width: 100vw;
+  background-color: #201c26;
+  padding-top: 10px;
+`;
 
 const FooterConatiner = styled.div`
   display: flex;
