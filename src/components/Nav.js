@@ -13,6 +13,7 @@ function Nav() {
           <a
             href="http://www.seoulmetro.co.kr/kr/cyberStation.do"
             target="_blank"
+            rel="noreferrer"
           >
             <img
               src="images/subway-white.png"

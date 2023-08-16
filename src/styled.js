@@ -3,6 +3,7 @@ import reset from "styled-reset";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
+
   body{
     background-color: #231B2D;  
     font-family: 'Noto Sans KR', sans-serif;

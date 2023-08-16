@@ -52,13 +52,15 @@ const Location = (props) => {
       statinLineList: ["3", "5"],
     },
   ];
-  console.log(dummyList.length);
 
   return (
     <LocationContainer>
       <LocationTitle>
         현재{" "}
-        <span class="Line" style={{ color: props.lineColor, fontWeight: 900 }}>
+        <span
+          className="Line"
+          style={{ color: props.lineColor, fontWeight: 900 }}
+        >
           {props.data}호선
         </span>
         , 마천행 열차 탑승 중입니다.
@@ -67,9 +69,8 @@ const Location = (props) => {
         <BodyContainer>
           <NameContainer>
             {dummyList.map((station, index) => (
-              <StationList>
+              <StationList key={index}>
                 <StationCircle
-                  key={index}
                   style={{
                     borderColor: props.lineColor,
                     borderWidth: `2px`,
