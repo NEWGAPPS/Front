@@ -59,6 +59,7 @@ function CardList() {
       {dummyList.map((card, index) => {
         return <Card {...card} key={index} />;
       })}
+   
     </CardListContainer>
   );
 }
