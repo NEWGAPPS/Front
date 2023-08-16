@@ -1,7 +1,6 @@
 import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import First from "./pages/First";
-import Second from "./pages/Second";
 import Third from "./pages/Third";
 import GlobalStyles from "./styled";
 import Footer from "./components/Footer";
@@ -23,7 +22,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<First getTime={getTime} />}></Route>
-          <Route path="/Second" element={<Second getTime={getTime} />}></Route>
           <Route path="/Third" element={<Third />}></Route>
         </Routes>
       </BrowserRouter>
