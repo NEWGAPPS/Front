@@ -10,12 +10,29 @@ function First({ getTime }) {
 
   const fetchData = async () => {
     try {
-      setTimeout(() => {
-        setLoading(false);
-      }, 1500);
-      const res = await axios.get(URL);
+      setLoading(true);
+      const position = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+      });
+      const location = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      };
+
+      await axios.post(URL, location);
+      // Fetch data from the server
+        
+      const response = await axios.get(URL);
+      const data = response.data;
+
+      // Update loading state
+      setLoading(false);
+
+      // Do something with the fetched data
+      console.log(data);
     } catch (err) {
-      alert("Error occur!");
+      console.log(`${err}`);
+      setLoading(false); // Make sure to handle the loading state in case of an error
     }
   };
 
