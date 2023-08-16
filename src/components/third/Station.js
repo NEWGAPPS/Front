@@ -13,7 +13,14 @@ const Station = (props) => {
       <BodyContainer>
         <NameContainer>
           {props.data.map((station, index) => (
-            <StationInfo key={index}>
+            <StationInfo
+              key={index}
+              style={{
+                borderColor: props.lineColor,
+                borderWidth: `10px`,
+                borderStyle: `solid`,
+              }}
+            >
               <StationNameKR>{station.stationNameKR}</StationNameKR>
               <StationNameEN>{station.stationNameEN}</StationNameEN>
               <StationExitInfo>
@@ -21,7 +28,7 @@ const Station = (props) => {
                   <img
                     key={index}
                     className="exitLine"
-                    src={`images/호선/${line}호선.png`}
+                    src={`images/호선/${line}.png`}
                     alt="호선"
                   />
                 ))}
@@ -38,7 +45,16 @@ const Station = (props) => {
             </StationInfo>
           ))}
         </NameContainer>
-        <Line />
+        <Line
+          style={{
+            borderTopColor: props.lineColor,
+            borderTopWidth: `5px`,
+            borderTopStyle: `solid`,
+            borderBottomColor: props.lineColor,
+            borderBottomWidth: `5px`,
+            borderBottomStyle: `solid`,
+          }}
+        />
       </BodyContainer>
     </ScrollContainer>
   );
@@ -74,8 +90,6 @@ const Line = styled.div`
   position: absolute;
   z-index: -1;
   height: 100px;
-  border-top: 5px solid #975ce2;
-  border-bottom: 5px solid #975ce2;
   background: #fff;
   width: 190vw;
   top: 50%;
@@ -93,7 +107,6 @@ const StationInfo = styled.div`
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 10px solid var(--5호선);
   background: #fff;
   text-align: center;
   display: flex;
@@ -119,12 +132,12 @@ const StationNameEN = styled.div`
 
 const StationExitInfo = styled.div`
   .door {
-      height: 20px;
-      margin: 0px 5px;
+      height: 25px;
+      margin: 0px 3px;
     }
   .exitLine {
-    height: 20px;
-    margin: 0px 5px;
+    height: 25px;
+    margin: 0px 3px;
   }
   display: flex;
   justify-content: center;
