@@ -6,7 +6,7 @@ function Card(prop) {
     <CardContainer>
       <div className="title">
         <img
-          src={`images/호선/${prop.stationNum}호선.png`}
+          src={`images/호선/${prop.stationNum}.png`}
           alt={`${prop.stationNum}호선 사진`}
           className="train-number"
         />
