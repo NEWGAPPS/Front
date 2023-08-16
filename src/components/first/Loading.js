@@ -35,6 +35,7 @@ const LoadingContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 73.4vh;
   img.logo {
     display: block;
     margin-bottom: 10px;

@@ -19,10 +19,11 @@ const Footer = () => {
 };
 
 const Foooter = styled.div`
-  position: fixed;
-  bottom: 7px;
+  position: absolute;
+  bottom: 0;
   width: 100vw;
   background-color: #231b2d;
+  padding-bottom: 10px;
 `;
 
 const FooterConatiner = styled.div`
