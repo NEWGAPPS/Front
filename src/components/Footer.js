@@ -22,7 +22,7 @@ const Foooter = styled.div`
   position: fixed;
   bottom: 0px;
   width: 100vw;
-  background-color: #201c26;
+  background: linear-gradient(#231b2d, #201c26);
   padding-top: 10px;
 `;
 
