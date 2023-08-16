@@ -116,12 +116,12 @@ const LocationTitle = styled.div`
 
 const BlackMask = styled.div`
   position: absolute;
-  z-index: -999;
   width: 100vw;
   height: 35vh;
-  top: 30px;
+  top: 35px;
   left: 0;
   background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
 `;
 
 const ScrollContainer = styled.div`
