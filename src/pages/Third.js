@@ -84,6 +84,15 @@ function Third() {
 
 const StationContainer = styled.div`
   height: 677px;
+  @keyframes imageView {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+ 
 `;
 
 export default Third;

@@ -65,6 +65,7 @@ const Location = (props) => {
         </span>
         , 오금행 열차 탑승 중입니다.
       </LocationTitle>
+      <BlackMask />
       <ScrollContainer>
         <BodyContainer>
           <NameContainer>
@@ -102,7 +103,9 @@ const Location = (props) => {
   );
 };
 
-const LocationContainer = styled.div``;
+const LocationContainer = styled.div`
+  position: relative;
+`;
 
 const LocationTitle = styled.div`
   text-align: center;
@@ -111,9 +114,20 @@ const LocationTitle = styled.div`
   font-weight: 400;
 `;
 
+const BlackMask = styled.div`
+  position: absolute;
+  z-index: -999;
+  width: 100vw;
+  height: 35vh;
+  top: 30px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+`;
+
 const ScrollContainer = styled.div`
-  height: 250px;
-  margin: 25px 50px;
+  height: 32vh;
+  margin-top: 25px;
+  margin-left: 20vw;
   overflow-x: hidden;
   position: relative;
 `;
@@ -128,7 +142,7 @@ const Line = styled.div`
   background: #fff;
   width: 4px;
   top: 50%;
-  left: 4.5px;
+  left: 3.7px;
   transform: translateY(-50%);
 `;
 
@@ -148,8 +162,8 @@ const StationList = styled.div`
 `;
 
 const StationCircle = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #fff;
   text-align: center;

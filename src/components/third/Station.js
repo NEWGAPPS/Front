@@ -2,17 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 const Station = (props) => {
+  const slicedArray = props.data.slice(0, 2);
   return (
-    <ScrollContainer>
+    <>
       <TitleContainer>
         <StationTitle>이전역</StationTitle>
         <StationTitle>다음역</StationTitle>
-        <StationTitle>다다음역</StationTitle>
-        <StationTitle>다다다음역</StationTitle>
       </TitleContainer>
       <BodyContainer>
         <NameContainer>
-          {props.data.map((station, index) => (
+          {slicedArray.map((station, index) => (
             <StationInfo
               key={index}
               style={{
@@ -56,30 +55,23 @@ const Station = (props) => {
           }}
         />
       </BodyContainer>
-    </ScrollContainer>
+    </>
   );
 };
-
-const ScrollContainer = styled.div`
-  overflow-x: scroll;
-  position: relative;
-  background-color: (0, 0, 0, 0.5);
-`;
 
 const TitleContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 30px 0px 10px;
-  width: 190vw;
+  width: 100vw;
 `;
 
 const StationTitle = styled.div`
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  width: 160px;
   text-align: center;
 `;
 
@@ -92,32 +84,31 @@ const Line = styled.div`
   z-index: -1;
   height: 100px;
   background: #fff;
-  width: 190vw;
+  width: 100vw;
   top: 50%;
   transform: translateY(-50%);
 `;
 
 const NameContainer = styled.div`
   display: flex;
-  width: 190vw;
-  justify-content: space-around;
+  width: 100vw;
   align-items: center;
+  justify-content: space-around;
 `;
 
 const StationInfo = styled.div`
-  width: 140px;
-  height: 140px;
+  width: 40vw;
+  height: 40vw;
   border-radius: 50%;
   background: #fff;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 `;
 
 const StationNameKR = styled.div`
-  padding-top: 24px;
+  margin-top: 14vw;
   color: black;
   font-size: 24px;
   font-style: normal;
@@ -125,11 +116,11 @@ const StationNameKR = styled.div`
 `;
 
 const StationNameEN = styled.div`
-  margin: 9px;
+  margin: 6px;
   color: #8e8a8a;
-  font-size: 9px;
+  font-size: 11px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 const StationExitInfo = styled.div`
@@ -143,6 +134,8 @@ const StationExitInfo = styled.div`
   display: flex;
   justify-content: center;
   gap: 1vw;
+  width: 80px;
+  flex-wrap: wrap;
   align-items: center;
 `;
 

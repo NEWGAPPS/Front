@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
   return (
@@ -15,10 +17,10 @@ function Nav() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="images/subway-white.png"
-              alt="지하철 노선도 아이콘"
+            <FontAwesomeIcon
+              icon={faMapLocationDot}
               className="icon"
+              style={{ color: "#ffffff" }}
             />
             노선도 확인
           </a>
@@ -53,11 +55,11 @@ const NavContainer = styled.div`
   .inner .map {
     align-self: center;
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 15px;
     padding-bottom: 3px;
   }
   .inner .map .icon {
-    height: 11px;
-    padding-right: 6px;
+    height: 15px;
+    margin-right: 9px;
   }
 `;
