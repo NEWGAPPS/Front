@@ -19,7 +19,7 @@ function CardDirection({ stationNum, stationList, subwayList }) {
   const leftStaticDirectionList = subwayList.filter(
     (subway) => subway.way === "left" && subway.state === "정차"
   );
-    
+
   return (
     <DirectionContainer>
       <div className="star-container"></div>{" "}
@@ -184,6 +184,16 @@ const DirectionContainer = styled.div`
     top: 0;
     left: 0;
     transition: 0.4s;
+    animation: scale 0.4s ease-in-out alternate infinite;
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
   }
 
   img:hover {
@@ -203,6 +213,7 @@ const DirectionContainer = styled.div`
     top: 0;
     right: 0;
     transition: 0.4s;
+    animation: scale 0.4s ease-in-out alternate infinite;
   }
 
   .station_list {

@@ -5,6 +5,7 @@ import Loading from "../components/first/Loading";
 import axios from "axios";
 import { useState } from "react";
 function First({ getTime }) {
+
   const URL = "https://jsonplaceholder.typicode.com/posts";
   const [loading, setLoading] = useState(true);
 
@@ -22,6 +23,7 @@ function First({ getTime }) {
   useEffect(() => {
     fetchData();
   }, []);
+  
   return (
     <>
       <GuideMessage getTime={getTime} />
