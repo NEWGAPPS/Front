@@ -97,65 +97,64 @@ const Location = (props) => {
   );
 };
 
-const LocationContainer = styled.div`
-`;
+const LocationContainer = styled.div``;
 
 const LocationTitle = styled.div`
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
 `;
 
 const ScrollContainer = styled.div`
-    height: 250px;
-    margin: 25px 50px;
-    overflow-x: hidden;
-    position: relative;
+  height: 250px;
+  margin: 25px 50px;
+  overflow-x: hidden;
+  position: relative;
 `;
 
 const BodyContainer = styled.div`
-    position: relative;
+  position: relative;
 `;
 
 const Line = styled.div`
-    position: absolute;
-    z-index: -1;
-    background: #fff;
-    width: 4px;
-    top: 50%;
-    left: 4.5px;
-    transform: translateY(-50%);
+  position: absolute;
+  z-index: -1;
+  background: #fff;
+  width: 4px;
+  top: 50%;
+  left: 4.5px;
+  transform: translateY(-50%);
 `;
 
 const NameContainer = styled.div`
-    width: 190vw;
+  width: 190vw;
 `;
 
 const StationList = styled.div`
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    .stationLine {
-        width: 20px;
-        height: 20px;
-        margin: 3px;
-    }
+  .stationLine {
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+  }
 `;
 
 const StationCircle = styled.div`
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #fff;
-    text-align: center;
-    font-size: 8px;
-    font-style: normal;
-    font-weight: 400;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
 `;
 
 const StationInfo = styled.div`
-    margin: 20px 10px 20px 40px;
+  margin: 20px 10px 20px 40px;
 `;
 
 export default Location;

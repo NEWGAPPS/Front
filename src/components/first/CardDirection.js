@@ -28,7 +28,7 @@ function CardDirection({ stationNum, stationList, subwayList }) {
       await axios.post("https://jsonplaceholder.typicode.com/posts");
       navigate("/Third");
     } catch (err) {
-      alert(`데이터 전송 오류 발생!{err}`);
+      alert(`데이터 전송 오류 발생!${err}`);
     }
   };
 
@@ -89,6 +89,9 @@ function CardDirection({ stationNum, stationList, subwayList }) {
                     : ""
                 }%`,
               }}
+              onClick={() => {
+                sendData();
+              }}
             />
           ))}
         </div>
@@ -114,6 +117,9 @@ function CardDirection({ stationNum, stationList, subwayList }) {
           {leftDirectionList.map((subway, index) => (
             <img
               key={subway.id}
+              onClick={() => {
+                sendData();
+              }}
               src={
                 subway.type === "일반"
                   ? "images/지하철-왼쪽방향.png"
@@ -138,6 +144,9 @@ function CardDirection({ stationNum, stationList, subwayList }) {
           {leftStaticDirectionList.map((subway, index) => (
             <img
               key={subway.id}
+              onClick={() => {
+                sendData();
+              }}
               src={
                 subway.type === "일반"
                   ? "images/지하철-왼쪽방향.png"
