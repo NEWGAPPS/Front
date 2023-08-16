@@ -63,6 +63,7 @@ const Station = (props) => {
 const ScrollContainer = styled.div`
   overflow-x: scroll;
   position: relative;
+  background-color: (0, 0, 0, 0.5);
 `;
 
 const TitleContainer = styled.div`
@@ -120,11 +121,12 @@ const StationNameKR = styled.div`
   color: black;
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;`;
+  font-weight: 600;
+`;
 
 const StationNameEN = styled.div`
   margin: 9px;
-  color: #8E8A8A;
+  color: #8e8a8a;
   font-size: 9px;
   font-style: normal;
   font-weight: 500;
@@ -132,15 +134,15 @@ const StationNameEN = styled.div`
 
 const StationExitInfo = styled.div`
   .door {
-      height: 25px;
-      margin: 0px 3px;
-    }
+    height: 25px;
+    margin: -4px;
+  }
   .exitLine {
     height: 25px;
-    margin: 0px 3px;
   }
   display: flex;
   justify-content: center;
+  gap: 1vw;
   align-items: center;
 `;
 

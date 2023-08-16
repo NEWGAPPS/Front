@@ -59,7 +59,7 @@ const Location = (props) => {
         현재{" "}
         <span
           className="Line"
-          style={{ color: props.lineColor, fontWeight: 900 }}
+          style={{ color: props.lineColor, fontWeight: 500 }}
         >
           {props.data}
         </span>
@@ -90,7 +90,12 @@ const Location = (props) => {
               </StationList>
             ))}
           </NameContainer>
-          <Line style={{ height: `${dummyList.length * 6.5}vh` }} />
+          <Line
+            style={{
+              height: `${dummyList.length * 6.5}vh`,
+              backgroundColor: `${props.lineColor}`,
+            }}
+          />
         </BodyContainer>
       </ScrollContainer>
     </LocationContainer>

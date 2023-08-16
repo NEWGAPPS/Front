@@ -12,7 +12,7 @@ function Third() {
         stationNameKR: "남부터미널",
         stationNameEN: "Nambu Bus Terminal",
         exitLineList: ["3"],
-        exitDoor: "right",
+        exitDoor: "left",
       },
       {
         stationNameKR: "양재",
