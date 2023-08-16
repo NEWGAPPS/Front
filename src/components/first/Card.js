@@ -1,22 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import CardDirection from "./CardDirection";
-function Card() {
+function Card(prop) {
   return (
     <CardContainer>
       <div className="title">
-        <img src="images/호선/5호선.png" alt="5호선" className="train-number" />
-        <span className="number">5호선</span>
+        <img
+          src={`images/호선/${prop.stationNum}호선.png`}
+          alt={`${prop.stationNum}호선 사진`}
+          className="train-number"
+        />
+        <span className="number">{prop.stationNum}호선</span>
       </div>
       <div className="direction_container">
-        <CardDirection />
+        <CardDirection {...prop} />
       </div>
     </CardContainer>
   );
 }
 const CardContainer = styled.div`
-  width: 82vw;
-  margin: 17px auto 12px;
+  width: 88vw;
+  margin: 17px auto 0px;
   .title {
     font-size: 26px;
     display: flex;
@@ -36,11 +40,11 @@ const CardContainer = styled.div`
     font-family: Montserrat;
   }
   .direction_container {
-    width: 84vw;
+    width: 88vw;
     display: flex;
     justify-content: space-between;
-    margin-top: 14px;
+    margin: 14px auto;
   }
 `;
 
-export default Card;
+export default React.memo(Card);
