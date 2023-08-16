@@ -38,7 +38,7 @@ const ResetButton = styled.div`
   border: 1px solid rgba(123, 115, 115);
   background: #fff;
   width: 130px;
-  height: 40px;
+  height: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +63,7 @@ const RefreshButton = styled.div`
   border-radius: 16px;
   background: #634ceb;
   width: 130px;
-  height: 40px;
+  height: 44px;
   display: flex;
   align-items: center;
   position: relative;
