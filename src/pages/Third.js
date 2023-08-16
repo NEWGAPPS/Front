@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 function Third() {
   const dummyList = {
-    stationNum: "3",
+    stationNum: "3호선",
     stationInfoList: [
       {
         stationNameKR: "남부터미널",
@@ -45,27 +45,27 @@ function Third() {
 
   const getLineColor = (line) => {
     switch (line) {
-      case "1":
+      case "1호선":
         return "#0052A4";
-      case "2":
+      case "2호선":
         return "#56BC32";
-      case "3":
+      case "3호선":
         return "#EF7C1C";
-      case "4":
+      case "4호선":
         return "#00A5DE";
-      case "5":
+      case "5호선":
         return "#975CE2";
-      case "6":
+      case "6호선":
         return "#CD7C2F";
-      case "7":
+      case "7호선":
         return "#747F00";
-      case "8":
+      case "8호선":
         return "#E6186C";
-      case "9":
+      case "9호선":
         return "#C19E20";
-      case "신분당":
+      case "신분당선":
         return "#D4003B";
-      case "수인분당":
+      case "수인분당선":
         return "#F5A200";
       default:
         return "#634CEB";

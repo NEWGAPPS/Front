@@ -12,7 +12,7 @@ const Button = () => {
     <ButtonContainer>
       <ResetButton onClick={goMain}>
         <ResetTitle>재설정</ResetTitle>
-        <FontAwesomeIcon icon={faTrainSubway} />
+        <FontAwesomeIcon icon={faTrainSubway} style={{ color: `#8D8F9F` }} />
       </ResetButton>
       <RefreshButton onClick={goThird}>
         <RefreshTitle>새로고침</RefreshTitle>
@@ -32,7 +32,7 @@ const ButtonContainer = styled.div`
 const ResetButton = styled.div`
     cursor: pointer;
     border-radius: 10px;
-    background: #634CEB;
+    background: #FFF;
     width: 120px;
     height: 40px;
 
@@ -42,6 +42,7 @@ const ResetButton = styled.div`
 `;
 
 const ResetTitle = styled.div`
+    color: #8d8f9f;
     font-size: 13px;
     font-style: normal;
     font-weight: 700;

@@ -5,9 +5,9 @@ function Nav() {
   return (
     <NavContainer>
       <ul className="inner">
-        <li className="logo">
+        <a href="/" className="logo">
           왓섭<span>?</span>
-        </li>
+        </a>
 
         <li className="map">
           <a

@@ -61,9 +61,9 @@ const Location = (props) => {
           className="Line"
           style={{ color: props.lineColor, fontWeight: 900 }}
         >
-          {props.data}호선
+          {props.data}
         </span>
-        , 마천행 열차 탑승 중입니다.
+        , 오금행 열차 탑승 중입니다.
       </LocationTitle>
       <ScrollContainer>
         <BodyContainer>
