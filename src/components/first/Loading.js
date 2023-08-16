@@ -74,14 +74,14 @@ const LoadingContainer = styled.div`
     top: -3px;
     left: 0;
     animation-name: moving-right;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-iteration-count: infinite;
   }
   .subway-animation img.left {
     top: 50px;
     right: 0;
     animation-name: moving-left;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-iteration-count: infinite;
   }
 

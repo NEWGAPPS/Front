@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
 
 function CardDirection({ stationNum, stationList, subwayList }) {
+  const navigate = useNavigate();
   const rightMovingList = [5, 37, 69];
   const leftMovingList = [10, 38, 72];
   const rightStaticList = [-5, 20, 53, 78];
@@ -20,6 +23,15 @@ function CardDirection({ stationNum, stationList, subwayList }) {
     (subway) => subway.way === "left" && subway.state === "정차"
   );
 
+  const sendData = async () => {
+    try {
+      await axios.post("https://jsonplaceholder.typicode.com/posts");
+      navigate("/Third");
+    } catch (err) {
+      alert(`데이터 전송 오류 발생!{err}`);
+    }
+  };
+
   return (
     <DirectionContainer>
       <div className="star-container"></div>{" "}
@@ -29,6 +41,9 @@ function CardDirection({ stationNum, stationList, subwayList }) {
           {rightDirectionList.map((subway, index) => (
             <img
               key={subway.id}
+              onClick={() => {
+                sendData();
+              }}
               src={
                 subway.type === "일반"
                   ? "images/지하철-오른쪽방향.png"

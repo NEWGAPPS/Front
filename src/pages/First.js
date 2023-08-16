@@ -12,7 +12,7 @@ function First({ getTime }) {
     try {
       setTimeout(() => {
         setLoading(false);
-      }, 1000);
+      }, 1500);
       const res = await axios.get(URL);
     } catch (err) {
       alert("Error occur!");
