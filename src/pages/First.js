@@ -5,16 +5,15 @@ import Loading from "../components/first/Loading";
 import axios from "axios";
 import { useState } from "react";
 function First({ getTime }) {
-
   const URL = "https://jsonplaceholder.typicode.com/posts";
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(URL);
       setTimeout(() => {
         setLoading(false);
       }, 1000);
+      const res = await axios.get(URL);
     } catch (err) {
       alert("Error occur!");
     }
@@ -23,7 +22,7 @@ function First({ getTime }) {
   useEffect(() => {
     fetchData();
   }, []);
-  
+
   return (
     <>
       <GuideMessage getTime={getTime} />
