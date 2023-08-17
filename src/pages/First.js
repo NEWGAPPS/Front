@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import GuideMessage from "../components/first/GuideMessage";
 import CardList from "../components/first/CardList";
 import Loading from "../components/first/Loading";
 import axios from "axios";
-import { useState } from "react";
+import Footer from "../components/first/Footer";
+
 function First({ getTime }) {
-  const URL = "https://jsonplaceholder.typicode.com/posts";
+  const [resultData, setResultData] = useState([]);
   const [loading, setLoading] = useState(true);
+  axios.defaults.withCredentials = true;
 
   const fetchData = async () => {
     try {
@@ -15,24 +17,22 @@ function First({ getTime }) {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
       const location = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
+        lat: 37.49,
+        lng: 127.12272,
       };
-
-      await axios.post(URL, location);
-      // Fetch data from the server
-        
+      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/37.470133/127.038486`;
       const response = await axios.get(URL);
-      const data = response.data;
+      setResultData(response.data);
 
+      // Fetch data from the server
       // Update loading state
       setLoading(false);
 
       // Do something with the fetched data
-      console.log(data);
     } catch (err) {
       console.log(`${err}`);
-      setLoading(false); // Make sure to handle the loading state in case of an error
+      setLoading(false);
+      // Make sure to handle the loading state in case of an error
     }
   };
 
@@ -43,7 +43,8 @@ function First({ getTime }) {
   return (
     <>
       <GuideMessage getTime={getTime} />
-      {loading ? <Loading /> : <CardList />}
+      {loading ? <Loading /> : <CardList data={resultData} />}
+      <Footer />
     </>
   );
 }

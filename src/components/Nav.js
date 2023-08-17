@@ -1,23 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
   return (
     <NavContainer>
       <ul className="inner">
-        <li className="logo">
+        <a href="/" className="logo">
           왓섭<span>?</span>
-        </li>
+        </a>
 
         <li className="map">
           <a
             href="http://www.seoulmetro.co.kr/kr/cyberStation.do"
             target="_blank"
+            rel="noreferrer"
           >
-            <img
-              src="images/subway-white.png"
-              alt="지하철 노선도 아이콘"
+            <FontAwesomeIcon
+              icon={faMapLocationDot}
               className="icon"
+              style={{ color: "#ffffff" }}
             />
             노선도 확인
           </a>
@@ -31,8 +34,9 @@ export default Nav;
 
 const NavContainer = styled.div`
   .inner {
-    width: 80vw;
-    margin: 20px auto 0px;
+    width: 80%;
+    padding-top: 20px;
+    margin: 0px auto 0px;
     display: flex;
     justify-content: space-between;
     padding-bottom: 13px;
@@ -52,11 +56,11 @@ const NavContainer = styled.div`
   .inner .map {
     align-self: center;
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 15px;
     padding-bottom: 3px;
   }
   .inner .map .icon {
-    height: 11px;
-    padding-right: 6px;
+    height: 15px;
+    margin-right: 9px;
   }
 `;

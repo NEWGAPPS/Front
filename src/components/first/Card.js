@@ -6,11 +6,11 @@ function Card(prop) {
     <CardContainer>
       <div className="title">
         <img
-          src={`images/호선/${prop.stationNum}.png`}
-          alt={`${prop.stationNum}호선 사진`}
+          src={`images/호선/${prop.station_num}.png`}
+          alt={`${prop.station_num} 사진`}
           className="train-number"
         />
-        <span className="number">{prop.stationNum}호선</span>
+        <span className="number">{prop.station_num}</span>
       </div>
       <div className="direction_container">
         <CardDirection {...prop} />
@@ -22,7 +22,6 @@ const CardContainer = styled.div`
   width: 88vw;
   margin: 17px auto 0px;
   .title {
-    font-size: 26px;
     display: flex;
   }
   .title img {
@@ -35,7 +34,7 @@ const CardContainer = styled.div`
   .title span {
     display: block;
     margin-left: 6px;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 500;
     font-family: Montserrat;
   }

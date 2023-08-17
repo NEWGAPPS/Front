@@ -2,57 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Location = (props) => {
-  const dummyList = [
-    {
-      stationName: "남부터미널",
-      statinLineList: ["3"],
-    },
-    {
-      stationName: "양재",
-      statinLineList: ["3", "신분당"],
-    },
-    {
-      stationName: "매봉",
-      statinLineList: ["3"],
-    },
-    {
-      stationName: "도곡",
-      statinLineList: ["3", "수인분당"],
-    },
-    {
-      stationName: "대치",
-      statinLineList: ["3"],
-    },
-    {
-      stationName: "학여울",
-      statinLineList: ["3"],
-    },
-    {
-      stationName: "대청",
-      statinLineList: ["3"],
-    },
-    {
-      stationName: "일원",
-      statinLineList: ["3"],
-    },
-    {
-      stationName: "수서",
-      statinLineList: ["3", "수인분당"],
-    },
-    {
-      stationName: "가락시장",
-      statinLineList: ["3", "8"],
-    },
-    {
-      stationName: "경찰병원",
-      statinLineList: ["3"],
-    },
-    {
-      stationName: "오금",
-      statinLineList: ["3", "5"],
-    },
-  ];
-  console.log(dummyList.length);
+  console.log(props.data);
 
   return (
     <LocationContainer>
@@ -60,19 +10,19 @@ const Location = (props) => {
         현재{" "}
         <span
           className="Line"
-          style={{ color: props.lineColor, fontWeight: 900 }}
+          style={{ color: props.lineColor, fontWeight: 500 }}
         >
-          {props.data}호선
+          {props.data[0][0]}
         </span>
-        , 마천행 열차 탑승 중입니다.
+        , {props.data[props.data.length - 1][1]}행 열차 탑승 중입니다.
       </LocationTitle>
+      <BlackMask />
       <ScrollContainer>
         <BodyContainer>
           <NameContainer>
-            {dummyList.map((station, index) => (
+            {props.data.map((station, index) => (
               <StationList key={index}>
                 <StationCircle
-                  key={index}
                   style={{
                     borderColor: props.lineColor,
                     borderWidth: `2px`,
@@ -80,8 +30,8 @@ const Location = (props) => {
                     color: `black`,
                   }}
                 ></StationCircle>
-                <StationInfo>{station.stationName}</StationInfo>
-                {station.statinLineList.map((line, index) => (
+                <StationInfo>{station[1]}</StationInfo>
+                {station[7].map((line, index) => (
                   <img
                     key={index}
                     className="stationLine"
@@ -92,14 +42,25 @@ const Location = (props) => {
               </StationList>
             ))}
           </NameContainer>
-          <Line style={{ height: `${dummyList.length * 6.5}vh` }} />
+          <Line
+            style={{
+              height: `${props.data.length * 56}px`,
+              backgroundColor: `${props.lineColor}`,
+            }}
+          >
+            <SubwayImage>
+              <img src="images/subway-origin.png" alt="지하철 아이콘" />
+            </SubwayImage>
+          </Line>
         </BodyContainer>
       </ScrollContainer>
     </LocationContainer>
   );
 };
 
-const LocationContainer = styled.div``;
+const LocationContainer = styled.div`
+  position: relative;
+`;
 
 const LocationTitle = styled.div`
   text-align: center;
@@ -108,9 +69,20 @@ const LocationTitle = styled.div`
   font-weight: 400;
 `;
 
+const BlackMask = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 35vh;
+  top: 35px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
+`;
+
 const ScrollContainer = styled.div`
-  height: 250px;
-  margin: 25px 50px;
+  height: 32vh;
+  margin-top: 25px;
+  margin-left: 20vw;
   overflow-x: hidden;
   position: relative;
 `;
@@ -125,8 +97,18 @@ const Line = styled.div`
   background: #fff;
   width: 4px;
   top: 50%;
-  left: 4.5px;
+  left: 3.7px;
   transform: translateY(-50%);
+`;
+
+const SubwayImage = styled.div`
+  img {
+    width: 33px;
+    position: absolute;
+    top: 40px;
+    left: -12px;
+    z-index: 999;
+  }
 `;
 
 const NameContainer = styled.div`
@@ -145,8 +127,8 @@ const StationList = styled.div`
 `;
 
 const StationCircle = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #fff;
   text-align: center;

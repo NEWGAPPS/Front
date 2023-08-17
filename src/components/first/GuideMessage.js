@@ -6,7 +6,6 @@ function GuideMessage({ getTime }) {
       <div className="inner">
         <h1 className="guide">탑승한(할) 지하철을 클릭해주세요!</h1>
         <p className="time">
-            
           <img src="images/clock.png" alt="시계 아이콘" className="clock" />
           <span className="real_time">{getTime()}</span>
         </p>
@@ -16,10 +15,10 @@ function GuideMessage({ getTime }) {
 }
 
 const GuideContainer = styled.div`
-  width: 80vw;
+  width: 80%;
   margin: 31px auto 6px;
   h1.guide {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
   }
@@ -38,7 +37,6 @@ const GuideContainer = styled.div`
     display: inline-block;
     align-self: center;
   }
-  
 `;
 
 export default GuideMessage;

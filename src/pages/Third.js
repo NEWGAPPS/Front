@@ -3,87 +3,63 @@ import Button from "../components/third/Button";
 import Location from "../components/third/Location";
 import Station from "../components/third/Station";
 import styled from "styled-components";
+import { useLocation } from "react-router";
 
 function Third() {
-  const dummyList = {
-    stationNum: "3",
-    stationInfoList: [
-      {
-        stationNameKR: "남부터미널",
-        stationNameEN: "Nambu Bus Terminal",
-        exitLineList: ["3"],
-        exitDoor: "right",
-      },
-      {
-        stationNameKR: "양재",
-        stationNameEN: "Yangjae",
-        exitLineList: ["3", "신분당"],
-        exitDoor: "right",
-      },
-      {
-        stationNameKR: "매봉",
-        stationNameEN: "Maebong",
-        exitLineList: ["3"],
-        exitDoor: "right",
-      },
-      {
-        stationNameKR: "도곡",
-        stationNameEN: "Dogok",
-        exitLineList: ["3", "수인분당"],
-        exitDoor: "right",
-      },
-    ],
-    // subwayInfo: {
-    //   id: 3028,
-    //   way: "right",
-    //   type: "일반",
-    //   state: "진행중",
-    //   before: "영등포구청",
-    //   after: "영등포시장",
-    // },
-  };
+  const data = useLocation();
+  const resultData = data.state;
+
 
   const getLineColor = (line) => {
     switch (line) {
-      case "1":
+      case "1호선":
         return "#0052A4";
-      case "2":
+      case "2호선":
         return "#56BC32";
-      case "3":
+      case "3호선":
         return "#EF7C1C";
-      case "4":
+      case "4호선":
         return "#00A5DE";
-      case "5":
+      case "5호선":
         return "#975CE2";
-      case "6":
+      case "6호선":
         return "#CD7C2F";
-      case "7":
+      case "7호선":
         return "#747F00";
-      case "8":
+      case "8호선":
         return "#E6186C";
-      case "9":
+      case "9호선":
         return "#C19E20";
-      case "신분당":
+      case "신분당선":
         return "#D4003B";
-      case "수인분당":
+      case "수인분당선":
         return "#F5A200";
       default:
         return "#634CEB";
     }
   };
-  const lineColor = getLineColor(dummyList.stationNum);
+  const lineColor = getLineColor(resultData[0][0]);
 
   return (
     <StationContainer>
-      <Station data={dummyList.stationInfoList} lineColor={lineColor} />
+      <Station data={resultData} lineColor={lineColor} />
       <Button />
-      <Location data={dummyList.stationNum} lineColor={lineColor} />
+      <Location data={resultData} lineColor={lineColor} />
     </StationContainer>
   );
 }
 
 const StationContainer = styled.div`
   height: 677px;
+  @keyframes imageView {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+ 
 `;
 
 export default Third;

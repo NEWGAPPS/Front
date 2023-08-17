@@ -2,75 +2,46 @@ import React from "react";
 import Card from "./Card";
 import styled from "styled-components";
 
-function CardList() {
+function CardList(props) {
   //  배열 받아와서 반복 횟수만큼 Card 컴포넌트 생성
   // 생성되는 Card엔  {호선, {역1,역2,역3,역4}, 지하철의 상대적 위치 } 전달해줘야함
-  // 예를 들어서
-  const dummyList = [
-    {
-      id: "0",
-      stationNum: "2",
-      stationList: ["합정", "신촌", "이대", "아현"],
-      subwayList: [
-        {
-          id: 3028,
-          way: "right",
-          type: "일반",
-          state: "진행중",
-          before: "신촌",
-          after: "이대",
-        },
-        {
-          id: 1023,
-          way: "left",
-          type: "일반",
-          state: "정차",
-          before: "아현",
-          after: "",
-        },
-      ],
-    },
-    {
-      id: "1",
-      stationNum: "5",
-      stationList: ["신길", "영등포시장", "영등포구청", "양평"],
-      subwayList: [
-        {
-          id: 3028,
-          way: "right",
-          type: "일반",
-          state: "진행중",
-          before: "영등포구청",
-          after: "양평",
-        },
-        {
-          id: 1023,
-          way: "left",
-          type: "일반",
-          state: "정차",
-          before: "신길",
-          after: "",
-        },
-      ],
-    },
-  ];
+  let isExist = false;
+  
   return (
     <CardListContainer>
-      {dummyList.map((card, index) => {
-        return <Card {...card} key={index} />;
+      {props?.data?.result_data?.map((card, index) => {
+        return card.trains.length === 0
+          ? ""
+          : ((<Card {...card} key={index} />), (isExist = true));
       })}
-   
+      {!isExist && (
+        <Guide>
+          ---------------------------
+          <br />
+          현재 운행 중인
+          <br /> 지하철이 없습니다.
+          <br />
+          ---------------------------
+        </Guide>
+      )}
     </CardListContainer>
   );
 }
 
 const CardListContainer = styled.div`
-  margin: 10px 20px 0px;
+  margin: 0px 20px 10px 20px;
   display: flex;
   flex-direction: column;
-  align-itmes: center;
-  height: 73vh;
+  align-items: center;
+  height: 580px;
   overflow-y: scroll;
 `;
 
+const Guide = styled.div`
+  margin: 50px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 200%;
+`;
 export default CardList;

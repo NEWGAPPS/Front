@@ -1,32 +1,41 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 
-function CardDirection({ stationNum, stationList, subwayList }) {
+function CardDirection({ station_num, station_list, trains }) {
   const navigate = useNavigate();
-  const rightMovingList = [5, 37, 69];
-  const leftMovingList = [10, 38, 72];
-  const rightStaticList = [-5, 20, 53, 78];
-  const leftStaticList = [-5, 23, 53, 82];
-  const rightDirectionList = subwayList.filter(
-    (subway) => subway.way === "right" && subway.state === "진행중"
+  const rightMovingList = [8, 39, 70];
+  const leftMovingList = [8, 39, 70];
+  const rightStaticList = [-7, 23, 53, 83];
+  const leftStaticList = [-7, 23, 53, 83];
+  const rightDirectionList = trains.filter(
+    (train) =>
+      train.direction === "1" &&
+      (train.arrival_message === "0" || train.arrival_message === "3")
   );
-  const rightStaticDirectionList = subwayList.filter(
-    (subway) => subway.way === "right" && subway.state === "정차"
+  const rightStaticDirectionList = trains.filter(
+    (train) =>
+      train.direction === "1" &&
+      (train.arrival_message === "1" || train.arrival_message === "2")
   );
-  const leftDirectionList = subwayList.filter(
-    (subway) => subway.way === "left" && subway.state === "진행중"
+  const leftDirectionList = trains.filter(
+    (train) =>
+      train.direction === "0" &&
+      (train.arrival_message === "0" || train.arrival_message === "3")
+  );
+  const leftStaticDirectionList = trains.filter(
+    (train) =>
+      train.direction === "0" &&
+      (train.arrival_message === "1" || train.arrival_message === "2")
   );
 
-  const leftStaticDirectionList = subwayList.filter(
-    (subway) => subway.way === "left" && subway.state === "정차"
-  );
-
-  const sendData = async () => {
+  const sendData = async (train) => {
     try {
-      await axios.post("https://jsonplaceholder.typicode.com/posts");
-      navigate("/Third");
+      console.log(train);
+      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/directions/`;
+      const response = await axios.post(URL, train);
+      navigate("/Third", { state: response.data });
     } catch (err) {
       alert(`데이터 전송 오류 발생!${err}`);
     }
@@ -38,14 +47,14 @@ function CardDirection({ stationNum, stationList, subwayList }) {
       {/* 작은 점들로 구성된 별을 담을 컨테이너 */}
       <div className="container">
         <div className="upper-subway">
-          {rightDirectionList.map((subway, index) => (
+          {rightDirectionList.map((train, index) => (
             <img
-              key={subway.id}
+              key={index}
               onClick={() => {
-                sendData();
+                sendData(train);
               }}
               src={
-                subway.type === "일반"
+                train.express === "0"
                   ? "images/지하철-오른쪽방향.png"
                   : "images/지하철(급행)-오른쪽.png"
               }
@@ -54,22 +63,22 @@ function CardDirection({ stationNum, stationList, subwayList }) {
                 position: "absolute",
                 top: 0,
                 left: `${
-                  subway.before === stationList[0]
+                  train.cur_station === station_list[1]
                     ? rightMovingList[0]
-                    : subway.before === stationList[1]
+                    : train.cur_station === station_list[2]
                     ? rightMovingList[1]
-                    : subway.before === stationList[2]
+                    : train.cur_station === station_list[3]
                     ? rightMovingList[2]
                     : ""
                 }%`,
               }}
             />
           ))}
-          {rightStaticDirectionList.map((subway, index) => (
+          {rightStaticDirectionList.map((train, index) => (
             <img
-              key={subway.id}
+              key={index}
               src={
-                subway.type === "일반"
+                train.express === "0"
                   ? "images/지하철-오른쪽방향.png"
                   : "images/지하철(급행)-오른쪽.png"
               }
@@ -78,19 +87,19 @@ function CardDirection({ stationNum, stationList, subwayList }) {
                 position: "absolute",
                 top: 0,
                 left: `${
-                  subway.before === stationList[0]
+                  train.cur_station === station_list[0]
                     ? rightStaticList[0]
-                    : subway.before === stationList[1]
+                    : train.cur_station === station_list[1]
                     ? rightStaticList[1]
-                    : subway.before === stationList[2]
+                    : train.cur_station === station_list[2]
                     ? rightStaticList[2]
-                    : subway.before === stationList[3]
+                    : train.cur_station === station_list[3]
                     ? rightStaticList[3]
                     : ""
                 }%`,
               }}
               onClick={() => {
-                sendData();
+                sendData(train);
               }}
             />
           ))}
@@ -98,30 +107,42 @@ function CardDirection({ stationNum, stationList, subwayList }) {
         <div className="station_list">
           <div
             className="line"
-            style={{ backgroundColor: `var(--${stationNum}호선)` }}
+            style={{ backgroundColor: `var(--${station_num})` }}
           >
-            {stationList.map((station, index) => {
+            {station_list.map((station, index) => {
               return (
                 <div
                   className="circle"
-                  style={{ border: `2px solid var(--${stationNum}호선)` }}
+                  style={{ border: `2px solid var(--${station_num})` }}
                   key={index}
                 >
-                  <li>{station}</li>
+                  <li
+                    style={{
+                      fontSize: `${
+                        station.length > 6
+                          ? "8px"
+                          : station.length > 5
+                          ? "11px"
+                          : "13px"
+                      }`,
+                    }}
+                  >
+                    {station}
+                  </li>
                 </div>
               );
             })}
           </div>
         </div>
         <div className="lower-subway">
-          {leftDirectionList.map((subway, index) => (
+          {leftDirectionList.map((train, index) => (
             <img
-              key={subway.id}
+              key={index}
               onClick={() => {
-                sendData();
+                sendData(train);
               }}
               src={
-                subway.type === "일반"
+                train.express === "0"
                   ? "images/지하철-왼쪽방향.png"
                   : "images/지하철(급행)-왼쪽.png"
               }
@@ -130,25 +151,25 @@ function CardDirection({ stationNum, stationList, subwayList }) {
                 position: "absolute",
                 top: 0,
                 right: `${
-                  subway.before === stationList[3]
+                  train.cur_station === station_list[2]
                     ? leftMovingList[0]
-                    : subway.before === stationList[2]
+                    : train.cur_station === station_list[1]
                     ? leftMovingList[1]
-                    : subway.before === stationList[1]
+                    : train.cur_station === station_list[0]
                     ? leftMovingList[2]
                     : ""
                 }%`,
               }}
             />
           ))}
-          {leftStaticDirectionList.map((subway, index) => (
+          {leftStaticDirectionList.map((train, index) => (
             <img
-              key={subway.id}
+              key={index}
               onClick={() => {
-                sendData();
+                sendData(train);
               }}
               src={
-                subway.type === "일반"
+                train.express === "0"
                   ? "images/지하철-왼쪽방향.png"
                   : "images/지하철(급행)-왼쪽.png"
               }
@@ -157,13 +178,13 @@ function CardDirection({ stationNum, stationList, subwayList }) {
                 position: "absolute",
                 top: 0,
                 right: `${
-                  subway.before === stationList[3]
+                  train.cur_station === station_list[3]
                     ? leftStaticList[0]
-                    : subway.before === stationList[2]
+                    : train.cur_station === station_list[2]
                     ? leftStaticList[1]
-                    : subway.before === stationList[1]
+                    : train.cur_station === station_list[1]
                     ? leftStaticList[2]
-                    : subway.before === stationList[0]
+                    : train.cur_station === station_list[0]
                     ? leftStaticList[3]
                     : ""
                 }%`,
