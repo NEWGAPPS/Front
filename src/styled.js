@@ -5,7 +5,6 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
 
   body{
-    relative;
     background-color: #231B2D;  
     font-family: 'Noto Sans KR', sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -19,6 +18,8 @@ const GlobalStyles = createGlobalStyle`
     --7호선: #747F00;
     --8호선: #E6186C;
     --9호선: #C19E20;
+    --신분당선: #D4003B;
+    --수인분당선: #f5a200;
     list-style-type: none;
   }
 

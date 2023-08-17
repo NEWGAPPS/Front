@@ -5,51 +5,51 @@ const Location = (props) => {
   const dummyList = [
     {
       stationName: "남부터미널",
-      statinLineList: ["3"],
+      statinLineList: ["3호선"],
     },
     {
       stationName: "양재",
-      statinLineList: ["3", "신분당"],
+      statinLineList: ["3호선", "신분당선"],
     },
     {
       stationName: "매봉",
-      statinLineList: ["3"],
+      statinLineList: ["3호선"],
     },
     {
       stationName: "도곡",
-      statinLineList: ["3", "수인분당"],
+      statinLineList: ["3호선", "수인분당선"],
     },
     {
       stationName: "대치",
-      statinLineList: ["3"],
+      statinLineList: ["3호선"],
     },
     {
       stationName: "학여울",
-      statinLineList: ["3"],
+      statinLineList: ["3호선"],
     },
     {
       stationName: "대청",
-      statinLineList: ["3"],
+      statinLineList: ["3호선"],
     },
     {
       stationName: "일원",
-      statinLineList: ["3"],
+      statinLineList: ["3호선"],
     },
     {
       stationName: "수서",
-      statinLineList: ["3", "수인분당"],
+      statinLineList: ["3호선", "수인분당선"],
     },
     {
       stationName: "가락시장",
-      statinLineList: ["3", "8"],
+      statinLineList: ["3호선", "8호선"],
     },
     {
       stationName: "경찰병원",
-      statinLineList: ["3"],
+      statinLineList: ["3호선"],
     },
     {
       stationName: "오금",
-      statinLineList: ["3", "5"],
+      statinLineList: ["3호선", "5호선"],
     },
   ];
 
