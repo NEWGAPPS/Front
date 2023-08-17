@@ -4,6 +4,7 @@ import CardList from "../components/first/CardList";
 import Loading from "../components/first/Loading";
 import axios from "axios";
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 axios.defaults.withCredentials = true;
 
@@ -13,6 +14,7 @@ function First({ getTime }) {
   const fetchData = async () => {
     try {
       setLoading(true);
+
       const position = await new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
@@ -48,6 +50,7 @@ function First({ getTime }) {
     <>
       <GuideMessage getTime={getTime} />
       {loading ? <Loading /> : <CardList />}
+      <Footer />
     </>
   );
 }

@@ -54,8 +54,7 @@ function CardList() {
       ],
     },
   ];
-  
-  
+
   const 선희누나 = {
     result_data: [
       {
@@ -117,7 +116,6 @@ const CardListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-itmes: center;
-  height: 73vh;
   overflow-y: scroll;
 `;
 
