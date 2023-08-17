@@ -22,7 +22,6 @@ const CardContainer = styled.div`
   width: 88vw;
   margin: 17px auto 0px;
   .title {
-    font-size: 26px;
     display: flex;
   }
   .title img {
@@ -35,7 +34,7 @@ const CardContainer = styled.div`
   .title span {
     display: block;
     margin-left: 6px;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 500;
     font-family: Montserrat;
   }

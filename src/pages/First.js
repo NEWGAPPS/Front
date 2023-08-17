@@ -23,13 +23,15 @@ function First({ getTime }) {
         lng: position.coords.longitude,
       };
 
+      const 우찬 = await axios.get()
       const 성호 = await axios.get(
         `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/locations/?lat=${myLocation.lat}&lng=${myLocation.lng}`
       );
 
       const 선희 = await axios.get(
-        "https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/"
+        `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/?lat=${myLocation.lat}&lng=${myLocation.lng}`
       );
+      
       console.log(선희.data);
       // Fetch data from the server
       // Update loading state
