@@ -29,7 +29,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 4vw;
-  margin: 30px 0px 30px;
+  margin: 20px 0px 30px;
 `;
 
 const ResetButton = styled.div`
