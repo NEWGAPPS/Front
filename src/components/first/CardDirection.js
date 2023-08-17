@@ -32,6 +32,7 @@ function CardDirection({ station_num, station_list, trains }) {
 
   const sendData = async (train) => {
     try {
+      console.log(train);
       const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/directions/`;
       const response = await axios.post(URL, train);
       navigate("/Third", { state: response.data });
