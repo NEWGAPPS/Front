@@ -19,11 +19,7 @@ const Footer = () => {
 };
 
 const Foooter = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
   background-color: #231b2d;
-  padding-bottom: 10px;
 `;
 
 const FooterConatiner = styled.div`
@@ -42,7 +38,7 @@ const FooterTitle = styled.div`
 
 const FooterContent = styled.div`
   height: 39px;
-  margin: 0px 40px;
+  margin: 10px 40px;
   font-size: 9px;
   font-style: normal;
   font-weight: 300;

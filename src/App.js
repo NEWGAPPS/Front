@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import First from "./pages/First";
 import Third from "./pages/Third";
 import GlobalStyles from "./styled";
-import Footer from "./components/Footer";
 
 function App() {
   const getTime = () => {
@@ -25,7 +24,6 @@ function App() {
           <Route path="/Third" element={<Third />}></Route>
         </Routes>
       </BrowserRouter>
-      <Footer />
     </>
   );
 }
