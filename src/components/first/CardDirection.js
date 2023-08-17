@@ -30,10 +30,11 @@ function CardDirection({ station_num, station_list, trains }) {
       (train.arrival_message === "1" || train.arrival_message === "2")
   );
 
-  const sendData = async () => {
+  const sendData = async (train) => {
     try {
-      await axios.post("https://jsonplaceholder.typicode.com/posts");
-      navigate("/Third");
+      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/directions/`;
+      const response = await axios.post(URL, train);
+      navigate("/Third", { state: response.data });
     } catch (err) {
       alert(`데이터 전송 오류 발생!${err}`);
     }
@@ -49,7 +50,7 @@ function CardDirection({ station_num, station_list, trains }) {
             <img
               key={index}
               onClick={() => {
-                sendData();
+                sendData(train);
               }}
               src={
                 train.express === "0"
@@ -97,7 +98,7 @@ function CardDirection({ station_num, station_list, trains }) {
                 }%`,
               }}
               onClick={() => {
-                sendData();
+                sendData(train);
               }}
             />
           ))}
@@ -125,7 +126,7 @@ function CardDirection({ station_num, station_list, trains }) {
             <img
               key={index}
               onClick={() => {
-                sendData();
+                sendData(train);
               }}
               src={
                 train.express === "0"
@@ -152,7 +153,7 @@ function CardDirection({ station_num, station_list, trains }) {
             <img
               key={index}
               onClick={() => {
-                sendData();
+                sendData(train);
               }}
               src={
                 train.express === "0"

@@ -8,7 +8,7 @@ function CardList(props) {
 
   return (
     <CardListContainer>
-      {props.data.map((card, index) => {
+      {props?.data?.result_data?.map((card, index) => {
         return <Card {...card} key={index} />;
       })}
     </CardListContainer>
