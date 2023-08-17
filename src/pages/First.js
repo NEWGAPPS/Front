@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import GuideMessage from "../components/first/GuideMessage";
 import CardList from "../components/first/CardList";
 import Loading from "../components/first/Loading";
 import axios from "axios";
-import { useState } from "react";
 import Footer from "../components/first/Footer";
-function First({ getTime }) {
-  let data = [];
 
+function First({ getTime }) {
+  const [resultData, setResultData] = useState([]);
   const [loading, setLoading] = useState(true);
   axios.defaults.withCredentials = true;
 
@@ -22,8 +21,9 @@ function First({ getTime }) {
         lat: 37.49,
         lng: 127.12272,
       };
-      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/${location.lat}/${location.lng}`;
-      const res = await axios.get(URL);
+      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/37.470133/127.038486`;
+      const response = await axios.get(URL);
+      setResultData(response.data);
 
       data = res.data;
       console.log(data);
@@ -46,7 +46,7 @@ function First({ getTime }) {
   return (
     <>
       <GuideMessage getTime={getTime} />
-      {loading ? <Loading /> : <CardList data={data} />}
+      {loading ? <Loading /> : <CardList data={resultData} />}
       <Footer />
     </>
   );

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../components/third/Button";
 import Location from "../components/third/Location";
 import Station from "../components/third/Station";
 import styled from "styled-components";
+import { useLocation } from "react-router";
 
 function Third() {
+  const data = useLocation();
+  console.log(data.state);
   const dummyList = {
     stationNum: "3호선",
     stationInfoList: [
