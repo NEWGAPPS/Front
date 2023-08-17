@@ -96,7 +96,11 @@ const Location = (props) => {
               height: `${dummyList.length * 56}px`,
               backgroundColor: `${props.lineColor}`,
             }}
-          />
+          >
+            <SubwayImage>
+              <img src="images/subway-origin.png" alt="지하철 아이콘" />
+            </SubwayImage>
+          </Line>
         </BodyContainer>
       </ScrollContainer>
     </LocationContainer>
@@ -144,6 +148,16 @@ const Line = styled.div`
   top: 50%;
   left: 3.7px;
   transform: translateY(-50%);
+`;
+
+const SubwayImage = styled.div`
+  img {
+    width: 33px;
+    position: absolute;
+    top: 40px;
+    left: -12px;
+    z-index: 999;
+  }
 `;
 
 const NameContainer = styled.div`

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import First from "./pages/First";
 import Third from "./pages/Third";
 import GlobalStyles from "./styled";
+import styled from "styled-components";
 
 function App() {
   const getTime = () => {
@@ -16,16 +17,22 @@ function App() {
   };
   return (
     <>
-      <GlobalStyles />
-      <Nav />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<First getTime={getTime} />}></Route>
-          <Route path="/Third" element={<Third />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <BodyContainer>
+        <GlobalStyles />
+        <Nav />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<First getTime={getTime} />}></Route>
+            <Route path="/Third" element={<Third />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </BodyContainer>
     </>
   );
 }
+
+const BodyContainer = styled.div`
+  max-width: 800px;
+`;
 
 export default App;

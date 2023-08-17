@@ -25,8 +25,6 @@ function First({ getTime }) {
       const response = await axios.get(URL);
       setResultData(response.data);
 
-      data = res.data;
-      console.log(data);
       // Fetch data from the server
       // Update loading state
       setLoading(false);

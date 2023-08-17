@@ -115,7 +115,19 @@ function CardDirection({ station_num, station_list, trains }) {
                   style={{ border: `2px solid var(--${station_num})` }}
                   key={index}
                 >
-                  <li>{station}</li>
+                  <li
+                    style={{
+                      fontSize: `${
+                        station.length > 6
+                          ? "8px"
+                          : station.length > 5
+                          ? "11px"
+                          : "13px"
+                      }`,
+                    }}
+                  >
+                    {station}
+                  </li>
                 </div>
               );
             })}
