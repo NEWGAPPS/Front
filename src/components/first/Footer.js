@@ -20,6 +20,7 @@ const Footer = () => {
 
 const Foooter = styled.div`
   background-color: #231b2d;
+
 `;
 
 const FooterConatiner = styled.div`

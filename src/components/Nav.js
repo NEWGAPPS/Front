@@ -34,8 +34,9 @@ export default Nav;
 
 const NavContainer = styled.div`
   .inner {
-    width: 80vw;
-    margin: 20px auto 0px;
+    width: 80%;
+    padding-top: 20px;
+    margin: 0px auto 0px;
     display: flex;
     justify-content: space-between;
     padding-bottom: 13px;

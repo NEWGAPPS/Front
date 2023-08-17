@@ -15,7 +15,7 @@ function GuideMessage({ getTime }) {
 }
 
 const GuideContainer = styled.div`
-  width: 80vw;
+  width: 80%;
   margin: 31px auto 6px;
   h1.guide {
     font-size: 18px;

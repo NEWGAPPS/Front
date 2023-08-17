@@ -35,12 +35,12 @@ const LoadingContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 450px;
+  height: 73.4vh;
   img.logo {
     display: block;
     margin-bottom: 10px;
     padding-left: 20px;
-    width: 50vw;
+    width: 53%;
   }
 
   p {
@@ -53,10 +53,11 @@ const LoadingContainer = styled.div`
     display: flex;
     position: relative;
     padding-top: 28px;
+    width: 60%;
   }
   .subway-animation .line {
     height: 3.4px;
-    width: 55vw;
+    width: 98%;
     align-self: center;
     background-color: #634ceb;
   }
@@ -88,19 +89,19 @@ const LoadingContainer = styled.div`
 
   @keyframes moving-right {
     0% {
-      left: 0vw;
+      left: 0;
     }
 
     100% {
-      left: 40vw;
+      left: 80%;
     }
   }
   @keyframes moving-left {
     0% {
-      right: 0vw;
+      right: 0;
     }
     100% {
-      right: 40vw;
+      right: 80%;
     }
   }
 `;

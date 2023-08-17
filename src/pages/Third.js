@@ -9,6 +9,7 @@ function Third() {
   const data = useLocation();
   const resultData = data.state;
 
+
   const getLineColor = (line) => {
     switch (line) {
       case "1호선":

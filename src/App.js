@@ -17,22 +17,43 @@ function App() {
   };
   return (
     <>
-      <BodyContainer>
-        <GlobalStyles />
-        <Nav />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<First getTime={getTime} />}></Route>
-            <Route path="/Third" element={<Third />}></Route>
-          </Routes>
-        </BrowserRouter>
-      </BodyContainer>
+      <GlobalStyles />
+      {document.documentElement.clientWidth > 800 ? (
+        <WindowContainer>
+          <BodyContainer>
+            <Nav />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<First getTime={getTime} />}></Route>
+                <Route path="/Third" element={<Third />}></Route>
+              </Routes>
+            </BrowserRouter>
+          </BodyContainer>
+        </WindowContainer>
+      ) : (
+        <>
+          <Nav />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<First getTime={getTime} />}></Route>
+              <Route path="/Third" element={<Third />}></Route>
+            </Routes>
+          </BrowserRouter>
+        </>
+      )}
     </>
   );
 }
 
+const WindowContainer = styled.div`
+  width: 100vw;
+  background-color: white;
+`;
+
 const BodyContainer = styled.div`
-  max-width: 800px;
+  max-width: 450px;
+  margin: 0 auto;
+  background-color: #231b2d;
 `;
 
 export default App;
