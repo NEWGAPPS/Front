@@ -22,7 +22,9 @@ const Foooter = styled.div`
   width: 100vw;
   background-color: #231b2d;
   padding-bottom: 10px;
-  margin-top: 30px; 
+  margin-top: 30px;
+  position: absolute;
+  bottom: 0;
 `;
 
 const FooterConatiner = styled.div`
