@@ -28,33 +28,12 @@ const Button = () => {
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-  gap: 5vw;
-  align-items: center;
-  margin: 50px 0px;
-=======
   gap: 4vw;
   margin: 20px 0px 30px;
->>>>>>> main
 `;
 
 const ResetButton = styled.div`
   cursor: pointer;
-<<<<<<< HEAD
-  border-radius: 10px;
-  background: #634ceb;
-  width: 120px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ResetTitle = styled.div`
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 700;
-=======
   border-radius: 16px;
   border: 1px solid rgba(123, 115, 115);
   background: #fff;
@@ -74,7 +53,6 @@ const ResetTitle = styled.div`
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
->>>>>>> main
   text-align: center;
   line-height: 38px;
   margin-right: 10px;
@@ -82,16 +60,6 @@ const ResetTitle = styled.div`
 
 const RefreshButton = styled.div`
   cursor: pointer;
-<<<<<<< HEAD
-  border-radius: 10px;
-  background: #634ceb;
-  width: 120px;
-  height: 40px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-=======
   border-radius: 16px;
   background: #634ceb;
   width: 130px;
@@ -102,21 +70,13 @@ const RefreshButton = styled.div`
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
->>>>>>> main
 `;
 
 const RefreshTitle = styled.div`
   font-size: 13px;
   font-style: normal;
-<<<<<<< HEAD
-  font-weight: 700;
-  text-align: center;
-  line-height: 38px;
-  margin-right: 10px;
-=======
   font-weight: 600;
   padding-left: 22px;
->>>>>>> main
 `;
 
 export default Button;
