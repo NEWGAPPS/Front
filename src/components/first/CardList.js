@@ -54,12 +54,60 @@ function CardList() {
       ],
     },
   ];
+  
+  
+  const 선희누나 = {
+    result_data: [
+      {
+        station_Num: "3호선",
+        station_list: ["수서", "가락시장", "경찰병원", "오금"],
+        trains: [
+          {
+            line_num: "3호선",
+            direction: "1",
+            express: "0",
+            arrival_message: "2",
+            cur_station: "경찰병원",
+            endstation: "오금",
+            msg_time: "2023-08-17 17:39:23",
+            train_num: "3253",
+          },
+        ],
+      },
+      {
+        station_Num: "8호선",
+        station_list: ["석촌", "송파", "가락시장", "문정"],
+        trains: [
+          {
+            line_num: "8호선",
+            direction: "0",
+            express: "0",
+            arrival_message: "1",
+            cur_station: "석촌",
+            endstation: "암사",
+            msg_time: "2023-08-17 17:39:30",
+            train_num: "8190",
+          },
+          {
+            line_num: "8호선",
+            direction: "1",
+            express: "0",
+            arrival_message: "2",
+            cur_station: "송파",
+            endstation: "모란",
+            msg_time: "2023-08-17 17:39:34",
+            train_num: "8187",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <CardListContainer>
       {dummyList.map((card, index) => {
         return <Card {...card} key={index} />;
       })}
-   
     </CardListContainer>
   );
 }

@@ -4,6 +4,9 @@ import CardList from "../components/first/CardList";
 import Loading from "../components/first/Loading";
 import axios from "axios";
 import { useState } from "react";
+
+axios.defaults.withCredentials = true;
+
 function First({ getTime }) {
   const [loading, setLoading] = useState(true);
 
@@ -13,12 +16,21 @@ function First({ getTime }) {
       const position = await new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
-      const location = {
+      const myLocation = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       };
-      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/locations?lat=${location.lat}&lng=${location.lng}`;
-      await axios.post(URL, location);
+
+      const 성호 = await axios.get(
+        `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/locations/?lat=${myLocation.lat}&lng=${myLocation.lng}`
+      );
+
+      
+
+      const 선희 = await axios.get(
+        "https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/"
+      );
+      console.log(선희.data);
       // Fetch data from the server
       // Update loading state
       setLoading(false);
