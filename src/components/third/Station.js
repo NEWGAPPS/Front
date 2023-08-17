@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Station = (props) => {
   const slicedArray = props.data.slice(0, 2);
+  console.log(slicedArray);
   return (
     <>
       <TitleContainer>
@@ -20,10 +21,10 @@ const Station = (props) => {
                 borderStyle: `solid`,
               }}
             >
-              <StationNameKR>{station.stationNameKR}</StationNameKR>
-              <StationNameEN>{station.stationNameEN}</StationNameEN>
+              <StationNameKR>{station[1]}</StationNameKR>
+              <StationNameEN>{station[2]}</StationNameEN>
               <StationExitInfo>
-                {station.exitLineList.map((line, index) => (
+                {station[7].map((line, index) => (
                   <img
                     key={index}
                     className="exitLine"
@@ -34,7 +35,7 @@ const Station = (props) => {
                 <img
                   className="door"
                   src={
-                    station.exitDoor === "right"
+                    station[6] === 1
                       ? "images/door-right.png"
                       : "images/door-left.png"
                   }

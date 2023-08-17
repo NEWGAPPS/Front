@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../components/third/Button";
 import Location from "../components/third/Location";
 import Station from "../components/third/Station";
@@ -7,44 +7,7 @@ import { useLocation } from "react-router";
 
 function Third() {
   const data = useLocation();
-  console.log(data.state);
-  const dummyList = {
-    stationNum: "3호선",
-    stationInfoList: [
-      {
-        stationNameKR: "남부터미널",
-        stationNameEN: "Nambu Bus Terminal",
-        exitLineList: ["3호선"],
-        exitDoor: "left",
-      },
-      {
-        stationNameKR: "양재",
-        stationNameEN: "Yangjae",
-        exitLineList: ["3호선", "신분당선"],
-        exitDoor: "right",
-      },
-      {
-        stationNameKR: "매봉",
-        stationNameEN: "Maebong",
-        exitLineList: ["3호선"],
-        exitDoor: "right",
-      },
-      {
-        stationNameKR: "도곡",
-        stationNameEN: "Dogok",
-        exitLineList: ["3호선", "수인분당선"],
-        exitDoor: "right",
-      },
-    ],
-    // subwayInfo: {
-    //   id: 3028,
-    //   way: "right",
-    //   type: "일반",
-    //   state: "진행중",
-    //   before: "영등포구청",
-    //   after: "영등포시장",
-    // },
-  };
+  const resultData = data.state;
 
   const getLineColor = (line) => {
     switch (line) {
@@ -74,13 +37,13 @@ function Third() {
         return "#634CEB";
     }
   };
-  const lineColor = getLineColor(dummyList.stationNum);
+  const lineColor = getLineColor(resultData[0][0]);
 
   return (
     <StationContainer>
-      <Station data={dummyList.stationInfoList} lineColor={lineColor} />
+      <Station data={resultData} lineColor={lineColor} />
       <Button />
-      <Location data={dummyList.stationNum} lineColor={lineColor} />
+      <Location data={resultData} lineColor={lineColor} />
     </StationContainer>
   );
 }
