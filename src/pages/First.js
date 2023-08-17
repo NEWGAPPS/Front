@@ -83,6 +83,7 @@ function First({ getTime }) {
   const fetchData = async () => {
     try {
       setLoading(true);
+
       const position = await new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
