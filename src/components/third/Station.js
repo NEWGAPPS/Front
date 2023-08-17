@@ -63,7 +63,7 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 30px 0px 10px;
+  margin: 15px 0px 10px;
   width: 100vw;
 `;
 

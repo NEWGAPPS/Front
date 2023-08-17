@@ -25,8 +25,6 @@ function First({ getTime }) {
         `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/locations/?lat=${myLocation.lat}&lng=${myLocation.lng}`
       );
 
-      
-
       const 선희 = await axios.get(
         "https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/"
       );

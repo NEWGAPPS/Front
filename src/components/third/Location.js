@@ -93,7 +93,7 @@ const Location = (props) => {
           </NameContainer>
           <Line
             style={{
-              height: `${dummyList.length * 6.5}vh`,
+              height: `${dummyList.length * 56}px`,
               backgroundColor: `${props.lineColor}`,
             }}
           />

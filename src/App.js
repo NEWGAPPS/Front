@@ -25,7 +25,6 @@ function App() {
           <Route path="/Third" element={<Third />}></Route>
         </Routes>
       </BrowserRouter>
-      <Footer />
     </>
   );
 }
