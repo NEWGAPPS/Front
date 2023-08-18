@@ -54,7 +54,7 @@ const Location = (props) => {
 
     hour = hour < 10 ? "0" + hour : hour;
     minute = minute < 10 ? "0" + minute : minute;
-    return hour + ":" + minute + " 도착";
+    return hour + ":" + minute + " ";
   };
 
   return (
@@ -96,6 +96,11 @@ const Location = (props) => {
                   {station[3] === -1
                     ? ""
                     : getArriveTime(station[3], station[4], station[5])}
+                  {station[3] === -1 ? (
+                    ""
+                  ) : (
+                    <span style={{ color: "#8F8A8A" }}>도착</span>
+                  )}
                 </ArriveTime>
               </StationList>
             ))}
