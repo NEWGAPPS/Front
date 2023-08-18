@@ -106,9 +106,7 @@ const Location = (props) => {
               backgroundColor: `${props.lineColor}`,
             }}
           ></Line>
-          <SubwayImage>
-            <img src="images/subway-express-left.png" alt="지하철 아이콘" />
-          </SubwayImage>
+          <SubwayImage></SubwayImage>
         </BodyContainer>
       </ScrollContainer>
     </LocationContainer>
@@ -201,10 +199,10 @@ const StationInfo = styled.div`
 
 const ArriveTime = styled.div`
   margin-left: 10px;
-  color: #8f8a8a;
+  color: red;
   font-size: 12px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
 `;
 
