@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Location = (props) => {
-  console.log(props);
   const getLineNum = (line) => {
     line = line.slice(0, 4);
     switch (line) {
@@ -39,7 +38,15 @@ const Location = (props) => {
     }
   };
 
-  const getArriveTime = (hour, minute) => {
+  const getArriveTime = (hour, minute, second) => {
+    if (second >= 30) {
+      minute++;
+      if (minute === 60) {
+        hour++;
+        minute = "00";
+        if (hour === 24) hour = "00";
+      }
+    }
     return hour + ":" + minute + " 도착";
   };
 
@@ -81,7 +88,7 @@ const Location = (props) => {
                 <ArriveTime>
                   {station[3] === -1
                     ? ""
-                    : getArriveTime(station[3], station[4])}
+                    : getArriveTime(station[3], station[4], station[5])}
                 </ArriveTime>
               </StationList>
             ))}

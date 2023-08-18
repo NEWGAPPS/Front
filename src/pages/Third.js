@@ -7,7 +7,6 @@ import { useLocation } from "react-router";
 
 function Third() {
   const data = useLocation();
-  console.log(data);
   const resultData = data.state.data;
   const subwayObject = data.state.object;
 
