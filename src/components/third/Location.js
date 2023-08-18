@@ -126,7 +126,7 @@ const BlackMask = styled.div`
 const ScrollContainer = styled.div`
   height: 32vh;
   margin-top: 25px;
-  margin-left: 20vw;
+  margin-left: 100px;
   overflow-x: hidden;
   position: relative;
 `;

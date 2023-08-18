@@ -19,7 +19,7 @@ function Card(prop) {
   );
 }
 const CardContainer = styled.div`
-  width: 88vw;
+  width: 88%;
   margin: 17px auto 0px;
   .title {
     display: flex;
@@ -39,7 +39,7 @@ const CardContainer = styled.div`
     font-family: Montserrat;
   }
   .direction_container {
-    width: 88vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 14px auto;

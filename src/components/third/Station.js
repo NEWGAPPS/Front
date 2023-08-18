@@ -100,7 +100,7 @@ const TitleContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 15px 0px 10px;
-  width: 100vw;
+  width: 100%;
 `;
 
 const StationTitle = styled.div`
@@ -120,22 +120,24 @@ const Line = styled.div`
   z-index: -1;
   height: 100px;
   background: #fff;
-  width: 100vw;
+  width: 100%;
   top: 50%;
   transform: translateY(-50%);
 `;
 
 const NameContainer = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   justify-content: space-around;
 `;
 
 const StationInfo = styled.div`
-  width: 40vw;
-  height: 40vw;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
+  position: relative;
+  z-index: 1;
   background: #fff;
   text-align: center;
   display: flex;
@@ -144,7 +146,6 @@ const StationInfo = styled.div`
 `;
 
 const StationNameKR = styled.div`
-  margin-top: 14vw;
   color: black;
   font-size: 24px;
   font-style: normal;
