@@ -10,20 +10,8 @@ function CardList(props) {
   return (
     <CardListContainer>
       {props?.data?.result_data?.map((card, index) => {
-        return card.trains.length === 0
-          ? ""
-          : ((<Card {...card} key={index} />), (isExist = true));
+        return <Card {...card} key={index} />;
       })}
-      {!isExist && (
-        <Guide>
-          ---------------------------
-          <br />
-          현재 운행 중인
-          <br /> 지하철이 없습니다.
-          <br />
-          ---------------------------
-        </Guide>
-      )}
     </CardListContainer>
   );
 }

@@ -7,7 +7,9 @@ import { useLocation } from "react-router";
 
 function Third() {
   const data = useLocation();
-  const resultData = data.state;
+  console.log(data);
+  const resultData = data.state.data;
+  const subwayObject = data.state.object;
 
   const getLineColor = (line) => {
     switch (line) {
@@ -29,7 +31,7 @@ function Third() {
         return "#E6186C";
       case "9호선":
         return "#C19E20";
-      case "신분당선":
+      case "0호선":
         return "#D4003B";
       case "수인분당선":
         return "#F5A200";
@@ -42,7 +44,7 @@ function Third() {
   return (
     <StationContainer>
       <Station data={resultData} lineColor={lineColor} />
-      <Button />
+      <Button data={resultData} object={subwayObject} />
       <Location data={resultData} lineColor={lineColor} />
     </StationContainer>
   );
