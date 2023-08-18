@@ -54,6 +54,7 @@ const BodyContainer = styled.div`
   max-width: 450px;
   margin: 0 auto;
   background-color: #231b2d;
+  position: relative;
 `;
 
 export default App;

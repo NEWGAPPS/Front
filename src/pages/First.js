@@ -18,11 +18,12 @@ function First({ getTime }) {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
       const location = {
-        lat: 37.49,
-        lng: 127.12272,
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
       };
       const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/${location.lat}/${location.lng}`;
       const response = await axios.get(URL);
+      console.log(location);
       setResultData(response.data);
 
       console.log(response.data);

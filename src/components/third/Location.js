@@ -33,8 +33,12 @@ const Location = (props) => {
         return "공항철도";
       case "1067":
         return "경춘선";
+      case "1081":
+        return "경강선";
       case "1092":
         return "우이신설선";
+      case "1093":
+        return "서해선";
     }
   };
 
@@ -43,10 +47,13 @@ const Location = (props) => {
       minute++;
       if (minute === 60) {
         hour++;
-        minute = "00";
-        if (hour === 24) hour = "00";
+        minute = 0;
+        if (hour === 24) hour = 0;
       }
     }
+
+    hour = hour < 10 ? "0" + hour : hour;
+    minute = minute < 10 ? "0" + minute : minute;
     return hour + ":" + minute + " 도착";
   };
 
@@ -98,11 +105,10 @@ const Location = (props) => {
               height: `${props.data.length * 56}px`,
               backgroundColor: `${props.lineColor}`,
             }}
-          >
-            <SubwayImage>
-              <img src="images/subway-origin.png" alt="지하철 아이콘" />
-            </SubwayImage>
-          </Line>
+          ></Line>
+          <SubwayImage>
+            <img src="images/subway-express-left.png" alt="지하철 아이콘" />
+          </SubwayImage>
         </BodyContainer>
       </ScrollContainer>
     </LocationContainer>
@@ -122,17 +128,16 @@ const LocationTitle = styled.div`
 
 const BlackMask = styled.div`
   position: absolute;
-  width: 100vw;
-  height: 35vh;
+  width: 100%;
+  height: 50vh;
   top: 35px;
   left: 0;
   background-color: rgba(0, 0, 0, 0.15);
-  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
 `;
 
 const ScrollContainer = styled.div`
   height: 32vh;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-left: 100px;
   overflow-x: hidden;
   position: relative;
@@ -144,7 +149,7 @@ const BodyContainer = styled.div`
 
 const Line = styled.div`
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   background: #fff;
   width: 4px;
   top: 50%;
@@ -180,6 +185,8 @@ const StationList = styled.div`
 const StationCircle = styled.div`
   width: 7px;
   height: 7px;
+  position: relative;
+  z-index: 1;
   border-radius: 50%;
   background: #fff;
   text-align: center;
@@ -194,7 +201,7 @@ const StationInfo = styled.div`
 
 const ArriveTime = styled.div`
   margin-left: 10px;
-  color: #8F8A8A;
+  color: #8f8a8a;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;

@@ -19,7 +19,7 @@ function Card(prop) {
   );
 }
 const CardContainer = styled.div`
-  width: 88%;
+  width: 92%;
   margin: 17px auto 0px;
   .title {
     display: flex;

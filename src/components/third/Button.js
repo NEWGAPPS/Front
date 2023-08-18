@@ -39,7 +39,7 @@ const Button = (props) => {
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 4vw;
+  gap: 20px;
   margin: 20px 0px 30px;
 `;
 

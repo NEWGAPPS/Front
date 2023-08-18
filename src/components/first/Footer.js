@@ -20,7 +20,8 @@ const Footer = () => {
 
 const Foooter = styled.div`
   background-color: #231b2d;
-
+  position: absolute;
+  bottom: 0;
 `;
 
 const FooterConatiner = styled.div`

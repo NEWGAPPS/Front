@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Station = (props) => {
+  console.log(props);
   const getLineNum = (line) => {
     line = line.slice(0, 4);
     switch (line) {
@@ -33,8 +34,12 @@ const Station = (props) => {
         return "공항철도";
       case "1067":
         return "경춘선";
+      case "1081":
+        return "경강선";
       case "1092":
         return "우이신설선";
+      case "1093":
+        return "서해선";
     }
   };
 
@@ -117,7 +122,7 @@ const BodyContainer = styled.div`
 
 const Line = styled.div`
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   height: 100px;
   background: #fff;
   width: 100%;
@@ -133,19 +138,20 @@ const NameContainer = styled.div`
 `;
 
 const StationInfo = styled.div`
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   position: relative;
-  z-index: 1;
   background: #fff;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 `;
 
 const StationNameKR = styled.div`
+  margin-top: 55px;
   color: black;
   font-size: 24px;
   font-style: normal;
@@ -170,8 +176,8 @@ const StationExitInfo = styled.div`
   }
   display: flex;
   justify-content: center;
-  gap: 1vw;
-  width: 80px;
+  gap: 3px;
+  width: 70%;
   flex-wrap: wrap;
   align-items: center;
 `;
