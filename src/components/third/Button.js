@@ -2,11 +2,22 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrainSubway, faRotate } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Button = () => {
+const Button = (props) => {
+  console.log(props.object);
   const nav = useNavigate();
   const goMain = () => nav("/");
-  const goThird = () => nav("/Third");
+  const sendData = async () => {
+    try {
+      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/directions/`;
+      const response = await axios.post(URL, props.object);
+      console.log(response);
+      nav("/Third", { state: { data: response.data, object: props.object } });
+    } catch (err) {
+      alert(`데이터 전송 오류 발생!${err}`);
+    }
+  };
 
   return (
     <ButtonContainer>
@@ -14,7 +25,7 @@ const Button = () => {
         <ResetTitle>지하철 재설정</ResetTitle>
         <FontAwesomeIcon icon={faTrainSubway} style={{ color: `#8D8F9F` }} />
       </ResetButton>
-      <RefreshButton onClick={goThird}>
+      <RefreshButton onClick={sendData}>
         <RefreshTitle>위치 새로고침</RefreshTitle>
         <FontAwesomeIcon
           icon={faRotate}

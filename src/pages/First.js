@@ -21,7 +21,7 @@ function First({ getTime }) {
         lat: 37.49,
         lng: 127.12272,
       };
-      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/37.470133/127.038486`;
+      const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/${location.lat}/${location.lng}`;
       const response = await axios.get(URL);
       setResultData(response.data);
 

@@ -32,10 +32,12 @@ function CardDirection({ station_num, station_list, trains }) {
 
   const sendData = async (train) => {
     try {
-      console.log(train);
+      const newObject = { subway_nm: train.line_num, trainNo: train.train_num };
+      console.log(newObject);
       const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/directions/`;
-      const response = await axios.post(URL, train);
-      navigate("/Third", { state: response.data });
+      const response = await axios.post(URL, newObject);
+      console.log(response);
+      navigate("/Third", { state: { data: response.data, object: newObject } });
     } catch (err) {
       alert(`데이터 전송 오류 발생!${err}`);
     }
