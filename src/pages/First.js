@@ -23,10 +23,7 @@ function First({ getTime }) {
       };
       const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/subways/${location.lat}/${location.lng}`;
       const response = await axios.get(URL);
-      console.log(location);
       setResultData(response.data);
-
-      console.log(response.data);
 
       // Fetch data from the server
       // Update loading state

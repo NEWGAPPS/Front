@@ -39,6 +39,8 @@ const Location = (props) => {
         return "우이신설선";
       case "1093":
         return "서해선";
+      default:
+        return "";
     }
   };
 

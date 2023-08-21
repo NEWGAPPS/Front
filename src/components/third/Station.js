@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Station = (props) => {
-  console.log(props);
   const getLineNum = (line) => {
     line = line.slice(0, 4);
     switch (line) {
@@ -40,6 +39,8 @@ const Station = (props) => {
         return "우이신설선";
       case "1093":
         return "서해선";
+      default:
+        return "";
     }
   };
 

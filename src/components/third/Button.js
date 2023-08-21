@@ -5,14 +5,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Button = (props) => {
-  console.log(props.object);
   const nav = useNavigate();
   const goMain = () => nav("/");
   const sendData = async () => {
     try {
       const URL = `https://port-0-back-eu1k2llldu9vju.sel3.cloudtype.app/api/directions/`;
       const response = await axios.post(URL, props.object);
-      console.log(response);
       nav("/Third", { state: { data: response.data, object: props.object } });
     } catch (err) {
       alert(`데이터 전송 오류 발생!${err}`);
